@@ -1,0 +1,33 @@
+Шаги создания Проекта
+1. Создаём виртуальное окружение:
+python -m venv venv
+
+2. Заходим в него (активируем):
+venv\scripts\activate
+
+3. Устанавливаем Django в виртуальное окружение:
+pip3 install django
+
+4. И запускаем команду создания проекта:
+(venv) ~/django-projects $ django-admin startproject News_Portal
+
+5. Создаем двух пользователей:
+python manage.py shell
+from django.contrib.auth.models import User
+администратор Django:
+admin = User.objects.create_user(username="root", password="root")
+и Супервайзера:
+supervisor = User.objects.create_user(username="admin", password="admin")
+
+5. Переходим в директорию проекта c (manage.py):
+cd News_Portal
+
+запустим следующую команду, которая создаст приложение accounts и добавим его в установленные приложения в настройках проекта.
+(venv) ~/News_Portal/News_Portal $ python manage.py startapp accounts
+
+Также через консоль запустим следующую команду, которая создаст новое приложение news.
+(venv) ~/News_Portal/News_Portal $ python manage.py startapp Models
+
+
+
+
