@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from datetime import datetime
+
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -22,14 +22,14 @@ class Author(models.Model):
             post_comments_rating += k.rating
 
         print('posts_rating= ', posts_rating)
-        print('comments_rating=',comments_rating)
-        print('post_comments_rating=',post_comments_rating)
+        print('comments_rating=', comments_rating)
+        print('post_comments_rating=', post_comments_rating)
 
         self.rating = posts_rating * 3 + comments_rating + post_comments_rating
         self.save()
 
-    def __str__(self):
-        return "Author's name is: %s" % self.user
+    # def __str__(self):
+    #     return "Author's name is: %s" % self.user
 
 
 class Category(models.Model):
@@ -50,6 +50,17 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
 
+    def like(self):
+        self.rating += 1
+        self.save()
+
+    def dislike(self):
+        self.rating -= 1
+        self.save()
+
+    def preview(self):
+        small_text = self.text[0:124] + '...'
+        return small_text
 
 class PostCategory(models.Model):  # OneToMany
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -63,14 +74,4 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def like(self):
-        self.rating += 1
-        self.save()
 
-    def dislike(self):
-        self.rating -= 1
-        self.save()
-
-    def preview(self):
-        small_text = self.text[0:124] + '...'
-        return small_text

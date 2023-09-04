@@ -15,18 +15,54 @@ pip3 install django
 python manage.py shell
 from django.contrib.auth.models import User
 администратор Django:
-admin = User.objects.create_user(username="root", password="root")
+admin = User.objects.create_user(username="admin", password="admin")
 и Супервайзера:
-supervisor = User.objects.create_user(username="admin", password="admin")
+supervisor = User.objects.create_user(username="root", password="root")
 
-5. Переходим в директорию проекта c (manage.py):
+6. Переходим в директорию проекта c (manage.py):
 cd News_Portal
 
-запустим следующую команду, которая создаст приложение accounts и добавим его в установленные приложения в настройках проекта.
-(venv) ~/News_Portal/News_Portal $ python manage.py startapp accounts
+-------------------
+сделать откат через удаление БД.
+1. Удаляйте файл db.sqlite3
+2. Удаляйте файлы миграции в app/migrations, кроме __init__.py
+3. python manage.py makemigrations
+4. python manage.py migrate
+-------------------
 
-Также через консоль запустим следующую команду, которая создаст новое приложение news.
+запустим следующую команду, которая создаст приложение Models и добавим его в установленные приложения в настройках проекта.
 (venv) ~/News_Portal/News_Portal $ python manage.py startapp Models
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'Models',
+]
+
+7. Создаем пару авторов:
+from Models.models import * 
+u1 = User.objects.create_user(username='Достоевский')
+a1=Author.objects.create(name=u1)
+u2=User.objects.create_user("Толстой")
+a2=Author.objects.create(user=u2) 
+
+Проверим рэйтинг =0
+a1.rating
+0
+
+8. Добавим публикации
+p1=Post.objects.create(title='Преступление и наказание',text='Родион Раскольников', author=a1) 
+p2=Post.objects.create(title='Война и мир',text='Пьер Безухов', author=a2) 
+p3=Post.objects.create(title='A Dog’s Tale',text='Dog', author=a3) 
+
+и комментарии
+c1=Comment.objects.create(text='Very good', post=p1, user=a1.user)
+c2=Comment.objects.create(text='Nice', post=p1, user=a2.user)
+c3=Comment.objects.create(text='Perfect', post=p1, user=a3.user)
 
 
 
