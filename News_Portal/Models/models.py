@@ -17,7 +17,7 @@ class Author(models.Model):
         comments = Comment.objects.filter(user=self.user)
         for j in comments:
             comments_rating += j.rating
-        post_comments = Comment.objects.filter(post__autor=self)
+        post_comments = Comment.objects.filter(post__author=self)
         for k in post_comments:
             post_comments_rating += k.rating
 
@@ -28,8 +28,8 @@ class Author(models.Model):
         self.rating = posts_rating * 3 + comments_rating + post_comments_rating
         self.save()
 
-    # def __str__(self):
-    #     return "Author's name is: %s" % self.user
+    def __str__(self):
+        return (f"Author's name is: %s" % self.user)
 
 
 class Category(models.Model):

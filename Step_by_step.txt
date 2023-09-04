@@ -46,9 +46,13 @@ INSTALLED_APPS = [
 7. Создаем пару авторов:
 from Models.models import * 
 u1 = User.objects.create_user(username='Достоевский')
-a1=Author.objects.create(name=u1)
 u2=User.objects.create_user("Толстой")
-a2=Author.objects.create(user=u2) 
+u3=User.objects.create_user("Mark Twain")
+
+a1=Author.objects.create(name=u1)
+a2=Author.objects.create(user=u2)
+a3=Author.objects.create(user=u3)
+
 
 Проверим рэйтинг =0
 a1.rating
@@ -64,6 +68,29 @@ c1=Comment.objects.create(text='Very good', post=p1, user=a1.user)
 c2=Comment.objects.create(text='Nice', post=p1, user=a2.user)
 c3=Comment.objects.create(text='Perfect', post=p1, user=a3.user)
 
+----------Присвоить переменным значения при сбросе терминала
+--Users---
+u1 = User.objects.get(username='Достоевский')
+u2 = User.objects.get(username='Толстой')
+u3 = User.objects.get(username='Mark Twain')
+-----Authors---
+a1=Author.objects.get(user=u1)
+a2=Author.objects.get(user=u2)
+a3=Author.objects.get(user=u3)
 
+------и получить данные-----------------------
+p1=Post.objects.get(author=a1)
+p1.title
+p1.text
 
+p2=Post.objects.get(author=a2)
+p3=Post.objects.get(author=a3)
 
+c1=Comment.objects.get(user=a1.user)
+c1.text
+c2=Comment.objects.get(user=a2.user)
+c3=Comment.objects.get(user=a3.user)
+c3.post.text
+c3.post.author.user.username
+Можно напрямую: Post.objects.get(author=a1).text
+Author.objects.get(user.username=='Достоевский').rating
