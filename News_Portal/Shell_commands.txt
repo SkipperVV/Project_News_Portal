@@ -24,15 +24,15 @@ cd News_Portal
 
 -------------------
 сделать откат через удаление БД.
-1. Удалить файл db.sqlite3
+1. Удалить файл db.sqlite3 или <python manage.py flush>
 2. Удалить файлы миграции в app/migrations, кроме __init__.py
 3. python manage.py makemigrations
 4. python manage.py migrate
 -------------------
 
-запустим следующую команду, которая создаст приложение Models и добавим его в установленные приложения в настройках проекта.
+запустим следующую команду, которая создаст приложение Models
 (venv) ~/News_Portal/News_Portal $ python manage.py startapp Models
-
+и добавим его в установленные приложения в настройках проекта.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 7. Создаем пару авторов:
-from Models.models import * 
+from Models.models import *
 u1 = User.objects.create_user(username='Достоевский')
 u2=User.objects.create_user("Толстой")
 u3=User.objects.create_user("Mark Twain")
@@ -62,8 +62,8 @@ a1.rating
 
 8. Добавим публикации
 p1=Post.objects.create(title='Преступление и наказание',text='Родион Раскольников', category='AR',author=a1)
-p2=Post.objects.create(title='Война и мир',text='Пьер Безухов', author=a2) 
-p3=Post.objects.create(title='A Dog’s Tale',text='Dog', author=a3) 
+p2=Post.objects.create(title='Война и мир',text='Пьер Безухов', author=a2)
+p3=Post.objects.create(title='A Dog’s Tale',text='Dog', author=a3)
 p4=Post.objects.create(title='Burning Daylight',text='Элам Харниш, удачливый золотоискатель с Аляски', author=a4)
 p5=Post.objects.create(title='РИА Новости - события в Москве', text='При оценке действий Армении по ратификации Римского статута Россия будет отталкиваться от разъяснений Еревана, заявила на брифинге официальный представитель МИД Мария Захарова.', post_type= 'news' ,author=admin)
 
@@ -122,7 +122,7 @@ cat4=Category.objects.create(name='Article')
 
 -------Получить все комментарии автора через юзера и ---------------------------------
 a1.user.comment_set.all()
-----------------------------------------
+
 --------Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи-----
 Post.get_best_post()
 
