@@ -36,11 +36,11 @@ class Author(models.Model):
         self.rating = posts_rating * 3 + comments_rating + post_comments_rating
         self.save()
 
-    @staticmethod
+    @staticmethod  # Author.get_best_author()
     def get_best_author():  # Вывести username и рейтинг лучшего пользователя
         max_rating = Author.objects.aggregate(Max("rating"))["rating__max"]
         best_author = Author.objects.get(rating=max_rating).user
-        print(f'Наибольший рейтинг {max_rating} имеет автор {best_author}')
+        print(f'Наибольший рейтинг {max_rating} набрал автор {best_author}')
 
     # def __str__(self):
     # return ("автор: %s" % self.user)
@@ -52,27 +52,28 @@ class Category(models.Model):
 
 class Post(models.Model):
     post_time = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=101)
+    title = models.CharField(max_length=100)
     text = models.TextField()
     post_type = models.CharField(max_length=2, choices=POSITION, default=article)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
 
-    @staticmethod
-    def get_best_post():  # Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи
+    @staticmethod  # Post.get_best_post()
+    def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи
         max_post_rating = Post.objects.aggregate(Max("rating"))["rating__max"]
         post = Post.objects.get(rating=max_post_rating)
-        post_time = post.post_time.strftime('%d.%m.%Y')
-        post_type = post.post_type
+        post_time = post.post_time
+        post_type = post.get_post_type_display()
         author = post.author.user
         title = post.title
 
         print(f"Лучшей статьёй, по мнению наших многочисленных подписчиков, является {post_type} '{title}'.\n"
-              f"{post_type} была опубликована {post_time} и уже получила {max_post_rating} миллионов положительных отзывов."
-              f"\nАвтор {post_type} - товарищ {author}\n"
-              f"Краткое изложение {post_type}:")
-        post.preview()
+              f"{post_type} была опубликована {post_time.strftime('%d.%m.%Y')} в {post_time.strftime('%H.%M')} "
+              f"и уже получила {max_post_rating} миллионов положительных отзывов."
+              f"\n{post_type}  написана товарищем, по имени {author}\n"
+              f"------------------------------------------------------"
+              f"\nКраткое изложение. {post_type} '{title}':\n\033[3m\033[36m{post.preview()}:")
 
     def like(self):
         self.rating += 1
@@ -83,7 +84,7 @@ class Post(models.Model):
         self.save()
 
     def preview(self):
-        small_text = self.text[0:124] + '...'
+        small_text = self.text[0:125] + '...'
         return small_text
 
 
