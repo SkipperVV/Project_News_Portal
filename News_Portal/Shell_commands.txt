@@ -89,8 +89,15 @@ a2=Author.objects.get(user=u2)
 a3=Author.objects.get(user=u3)
 a4=Author.objects.get(user=u4)
 
+#--Посмотреть Юзеров всех и по желанию-------
+User.objects.all()
+User.objects.all()[4].username
+User.objects.get(username='admin').id
+
 #------и получить данные-----------------------
 p1=Post.objects.get(author=a1)
+p4=Post.objects.get(author=a4)
+
 p1.title
 p1.text
 
@@ -115,13 +122,37 @@ c1.like()
 ....
 
 10--------Добавить 4 категории в модель Category---------------------
-cat1=Category.objects.create(name='Novel')
+cat1=Category.objects.create(name="Novel")
 cat2=Category.objects.create(name='Story')
 cat3=Category.objects.create(name='Drama')
 cat4=Category.objects.create(name='Article')
 
+Присвоить обратно при сбросе---------------------------
+cat1=Category.objects.get(name="Novel")
+cat2=Category.objects.get(name='Story')
+cat3=Category.objects.get(name='Drama')
+cat4=Category.objects.get(name='Article')
+
+11----присвоить категории постам-----------------------
+p1.category.add(1)
+p1.category.add(2)
+p1.category.add(4)
+p2.category.add(2)
+
+-----Посмотреть категории-----------------
+p1.category.all()[0].name
+p1.category.all()[1].name
+p2.category.all()[0].name
+p4.category.all()[0].name
+
+
 -------Получить все комментарии автора через юзера и ---------------------------------
 a1.user.comment_set.all()
+a1.user.comment_set.all()[0].text
+a1.user.comment_set.all()[2].text
+a2.user.comment_set.all()[0].text
+
+
 
 --------Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи-----
 Post.get_best_post()
