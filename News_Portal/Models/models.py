@@ -39,8 +39,11 @@ class Author(models.Model):
     @staticmethod  # Author.get_best_author()
     def get_best_author():  # Вывести username и рейтинг лучшего пользователя
         max_rating = Author.objects.aggregate(Max("rating"))["rating__max"]
-        best_author = Author.objects.get(rating=max_rating).user
-        print(f'Наибольший рейтинг {max_rating} набрал автор {best_author}')
+        best_author = Author.objects.filter(rating=max_rating)
+        for authors in best_author:
+            print(f'Наибольший рейтинг {max_rating} набрал автор {authors.user}', end='')
+            if len(best_author) > 1:
+                print(f', а также с тем же рейтингом в {max_rating} баллов- автор {authors.user}')
 
     # def __str__(self):
     # return ("автор: %s" % self.user)
@@ -69,7 +72,7 @@ class Post(models.Model):
                 if count == 0:
                     print(f'У нас не один победитель:')
                 else:
-                    print('А также еще одной ',end='')
+                    print('А также еще одной ', end='')
                 count += 1
             post_time = users.post_time
             post_type = users.get_post_type_display()
