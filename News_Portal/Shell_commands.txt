@@ -105,7 +105,7 @@ c4=Comment.objects.get(user=a1.user)
 c3.post.text
 c3.post.author.user.username
 #Можно напрямую: Post.objects.get(author=a1).text
-Author.objects.get(user.username=='Достоевский').rating
+#Author.objects.get(user.username=='Достоевский').rating
 
 9. Поставим лайк на пост
 p1.like()

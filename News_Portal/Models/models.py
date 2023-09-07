@@ -62,18 +62,25 @@ class Post(models.Model):
     @staticmethod  # Post.get_best_post()
     def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи
         max_post_rating = Post.objects.aggregate(Max("rating"))["rating__max"]
-        post = Post.objects.get(rating=max_post_rating)
-        post_time = post.post_time
-        post_type = post.get_post_type_display()
-        author = post.author.user
-        title = post.title
+        post = Post.objects.filter(rating=max_post_rating)
+        count = 0
+        for users in post:
+            if len(post) > 1:
+                if count == 0:
+                    print(f'У нас не один победитель:')
+                else:
+                    print('А также еще одной ',end='')
+                count += 1
+            post_time = users.post_time
+            post_type = users.get_post_type_display()
+            author = users.author.user
+            title = users.title
 
-        print(f"Лучшей статьёй, по мнению наших многочисленных подписчиков, является {post_type} '{title}'.\n"
-              f"{post_type} была опубликована {post_time.strftime('%d.%m.%Y')} в {post_time.strftime('%H.%M')} "
-              f"и уже получила {max_post_rating} миллионов положительных отзывов."
-              f"\n{post_type}  написана товарищем, по имени {author}\n"
-              f"------------------------------------------------------"
-              f"\nКраткое изложение. {post_type} '{title}':\n\033[3m\033[36m{post.preview()}:")
+            print(f"лучшей статьёй, по мнению наших многочисленных подписчиков, является {post_type} '{title}'.\n"
+                  f"{post_type} была опубликована {post_time.strftime('%d.%m.%Y')} в {post_time.strftime('%H.%M')} "
+                  f"и уже получила {max_post_rating} миллионов положительных отзывов."
+                  f"\n{post_type}  написана товарищем, по имени {author}\n"
+                  f"\nКраткое изложение. {post_type} '{title}':\n\033[3m\033[36m{users.preview()}\033[0m\n")
 
     def like(self):
         self.rating += 1
