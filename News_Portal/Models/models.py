@@ -72,7 +72,7 @@ class Post(models.Model):
                 if count == 0:
                     print(f'У нас не один победитель:')
                 else:
-                    print('А также еще одной ', end='')
+                    print('А также, еще одной ', end='')
                 count += 1
             post_time = users.post_time
             post_type = users.get_post_type_display()
