@@ -6,7 +6,7 @@ python -m venv venv
 venv\scripts\activate
 
 3. Устанавливаем Django в виртуальное окружение:
-pip3 install django
+pip install django
 
 4. И запускаем команду создания проекта:
 (venv) ~/django-projects $ django-admin startproject News_Portal

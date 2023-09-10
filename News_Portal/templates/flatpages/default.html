@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+
+<p align="center" style="color:#ff0099; font-size:30px"> Наши новости</p>
+<!--<p class="aligncenter">-->
+<!--    <img src="{% static 'images/Products.jpeg' %}" align="center" alt="products">-->
+<!--</p>-->
+<style> .aligncenter {text-align: center;} </style>
+{% block content %}
+<h1>Все новости</h1>
+{{ posts }}
+{% endblock content %}
+</body>
+</html>
