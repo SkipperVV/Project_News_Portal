@@ -127,6 +127,8 @@ cat2=Category.objects.create(name='Story')
 cat3=Category.objects.create(name='Drama')
 cat4=Category.objects.create(name='Article')
 
+Author.objects.order_by('-rating').values('user__username', 'rating').first()
+
 Присвоить обратно при сбросе---------------------------
 cat1=Category.objects.get(name="Novel")
 cat2=Category.objects.get(name='Story')
