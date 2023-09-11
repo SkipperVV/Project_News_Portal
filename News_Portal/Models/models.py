@@ -46,7 +46,7 @@ class Author(models.Model):
                 print(f', а также с тем же рейтингом в {max_rating} баллов- автор {authors.user}')
 
     def __str__(self):
-        return ("Автор: %s" % self.user)
+        return ("%s" % self.user)
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -61,8 +61,7 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
 
-    # def __str__(self):
-    #     return f' Поправить в __str__ {self.title()}, {self.text}'
+
 
     @staticmethod  # Post.get_best_post()
     def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи

@@ -1,13 +1,40 @@
-<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
-<!-- Название у нас будет  -->
-{% block title %}
-Post
-{% endblock title %}
+{% load censor_filter %}
 
-<!-- В контенте на странице мы выводим все новости -->
+{% block title %}
+Posts
+{% endblock title %}
 {% block content %}
-<h1>Все новости</h1>
-{{ posts }}
+<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}}, на сегодняшнее число: {{ time_now|date:'M d Y' }} </h2>
+
+<!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
+<hr>
+{% if posts %}
+<table>
+    <tr align="left">
+        <th> Автор:</th>
+        <th> Заголовок:</th>
+        <th> Краткое содержание:</th>
+        <th> Дата публикации:</th>
+        <th> Рэйтинг:</th>
+
+    </tr>
+
+    {% for item in posts %}
+    <tr>
+        <td width="200">{{item.author}}</td>
+        <td width="300">{{item.title|censor}}</td>
+        <td width="500">{{item.text|censor|truncatewords:20}}</td>
+        <td width="200">{{item.post_time}}</td>
+        <td width="50" align="center">{{item.rating}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h2>Сегодня без новостей :(</h2>
+{% endif %}
 {% endblock content %}
+<!--Про тэги
+     http://htmlbook.ru/html/table -->
+
