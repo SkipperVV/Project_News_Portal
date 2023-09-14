@@ -9,5 +9,5 @@ class PostFilter(FilterSet):
         fields = {
             # 'author': ['icontains'],
             # 'title': ['icontains'],
-            # 'post_time': ['gt'],
+            'post_time': ['gt'],
         }
