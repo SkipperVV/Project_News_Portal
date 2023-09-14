@@ -5,5 +5,5 @@ from .views_old import PostsList, PostDetail
 urlpatterns = [
    path('', PostsList.as_view()),
    path('<int:pk>', PostDetail.as_view()),
-   path('', PostView.as_view()),
+   path('s/', PostView.as_view()),
 ]

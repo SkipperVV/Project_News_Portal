@@ -6,8 +6,9 @@
 Post
 {% endblock title %}
 
-<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
+
+<!-- В контенте на странице мы выводим статью, идентификатор которой был передан в url -->
 {% block content %}
-<h1> {{ post.title|censor }}, {{post.author}}, опубликовано {{post.post_time}}</h1>
+<h1> {{ post.title|censor }}, {{post.author.user}}, опубликовано {{post.post_time}}</h1>
 <h1>Содержание: {{ post.text|censor }}</h1>
 {% endblock content %}

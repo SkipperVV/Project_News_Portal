@@ -14,5 +14,6 @@ bad_word = {
 def censor(value: str) -> str:
 
     for i in bad_word.keys():
-        value = value.lower().replace(i, bad_word[i])
+        if i in value:
+            value = value.lower().replace(i, bad_word[i])
     return f"{value}"

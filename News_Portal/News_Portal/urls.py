@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from ..Models.views import PostView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('pages/', include('django.contrib.flatpages.urls')),
-    path('posts/', include('Models.urls')),
     path('news/', include('Models.urls')),
-    path('search/', include('Models.urls')),
-
+    # path('search/', PostView.as_view()),
 ]
