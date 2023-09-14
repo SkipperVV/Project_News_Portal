@@ -9,7 +9,7 @@ class PostFilter(FilterSet):
     class Meta:
         model = Post
         fields = {
-            # 'author': ['icontains'],
-            # 'title': ['icontains'],
+            'author': ['icontains'],
+            'title': ['icontains'],
             'post_time': ['gt'],
         }
