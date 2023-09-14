@@ -2,13 +2,12 @@
 {% extends 'flatpages/default.html' %}
 <b style="color:#ff0099; font-size:30px"> Page "Post"</b>
 {% load censor_filter %}
-<!-- Название у нас будет Product -->
+
 {% block title %}
 Post
 {% endblock title %}
 
-<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
 <h1> {{ post.title|censor }}, {{post.author}}, опубликовано {{post.post_time}}</h1>
-<h1>Содержание: {{ post.text|censor }}</h1>
+<h3>Содержание: {{ post.text|censor }}</h3>
 {% endblock content %}
