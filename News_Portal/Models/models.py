@@ -46,7 +46,7 @@ class Author(models.Model):
                 print(f', а также с тем же рейтингом в {max_rating} баллов- автор {authors.user}')
 
     def __str__(self):
-        return ("%s" % self.user)
+        return f'self.user'
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)

@@ -1,15 +1,10 @@
 '''Импортируем класс, который говорит нам о том,
 что в этом представлении мы будем выводить список объектов из БД'''
+from django.views.generic import ListView, DetailView
+from .models import Post
 from datetime import datetime
 
-from django.views.generic import ListView, DetailView
-from django_filters import FilterSet
-
-from .models import Post
-from .templatetags.filters import PostFilter
-
-
-from pprint import pprint
+# from pprint import pprint
 class PostsList(ListView):
     model = Post
     ordering = '-post_time'
@@ -24,7 +19,7 @@ class PostsList(ListView):
         context = super().get_context_data(**kwargs)
         # К словарю добавим текущую дату в ключ 'time_now'.
         context['time_now'] = datetime.utcnow()
-        context['posts_quantity'] = len(Post.objects.all())  # или в html {{posts|length}}
+        context['posts_quantity'] = len(Post.objects.all())# или в html {{posts|length}}
         # pprint(context)
         return context
 
@@ -34,7 +29,6 @@ class PostsList(ListView):
     Для этого снова перейдём в файл Models/views.py и добавим в него представление ProductDetail, 
     которое будет выдавать информацию об одном товаре.'''
 
-
 class PostDetail(DetailView):
     # Модель всё та же, но мы хотим получать информацию по отдельному товару
     model = Post
@@ -43,15 +37,4 @@ class PostDetail(DetailView):
     # Название объекта, в котором будет выбранный пользователем продукт
     context_object_name = 'post'
 
-
-class PostView(ListView):
-    model = 'Post'
-    template_name = 'search.html'
-    context_object_name = 'post'
-    ordering = 'post_time'
-    paginate_by = 10
-    def get_context_data(self, **kwargs):
-        contex=super().get_context_data(**kwargs)
-        contex['filter']=PostFilter(self.request.GET , queryset=self.get_queryset())
-        return contex
 

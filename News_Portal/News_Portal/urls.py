@@ -22,4 +22,6 @@ urlpatterns = [
     #path('pages/', include('django.contrib.flatpages.urls')),
     path('posts/', include('Models.urls')),
     path('news/', include('Models.urls')),
+    path('search/', 'PostFilter.urls'),
+
 ]
