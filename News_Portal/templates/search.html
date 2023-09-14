@@ -4,6 +4,7 @@
 {% block content %}
 
 <!-- Перед таблицей добавим форму для поиска -->
+<p>Page search</p>
 <form method="GET">
     {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы придётся делать самому -->
     <input type="submit" value="Найти">
