@@ -19,6 +19,12 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< Updated upstream
     #path('pages/', include('django.contrib.flatpages.urls')),
     path('news/', include('Models.urls')),
+=======
+    # path('pages/', include('django.contrib.flatpages.urls')),
+    path('posts/', include('Models.urls')),
+    path('post/', include('Models.urls')),
+>>>>>>> Stashed changes
 ]
