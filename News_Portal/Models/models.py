@@ -48,8 +48,12 @@ class Author(models.Model):
     def __str__(self):
         return ("%s" % self.user)
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return f'{self.name}'
 
 
 class Post(models.Model):
@@ -61,7 +65,8 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
 
-
+    def __str__(self):
+        return f'{self.author}: {self.title}'
 
     @staticmethod  # Post.get_best_post()
     def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи
@@ -106,6 +111,9 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.text}'
+
     def like(self):
         self.rating += 1
         self.save()
@@ -118,3 +126,6 @@ class Comment(models.Model):
 class PostCategory(models.Model):  # OneToMany
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.post}, Категория: {self.category}'

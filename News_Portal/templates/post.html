@@ -10,4 +10,10 @@ Post
 {% block content %}
 <h1> {{ post.title|censor }}, {{post.author}}, опубликовано {{post.post_time}}</h1>
 <h3>Содержание: {{ post.text|censor }}</h3>
+<h3>
+    <br>
+    <a href="/news">На главную >>></a>
+<pre></pre>
+    <a href="/search/">Найти публикацию >>>></a>
+</h3>
 {% endblock content %}

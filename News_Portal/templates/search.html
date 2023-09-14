@@ -1,11 +1,12 @@
 {% extends 'flatpages/default.html' %}
 {% load censor_filter %}
-{% block title %} Posts' list {% endblock title %}
+{% load filter %}
+{% block title %} Posts {% endblock title %}
 
 {% block content %}
 
 <!-- Перед таблицей добавим форму для поиска -->
-<p>Page search</p>
+<p>Поиск публикаций</p>
 <form method="GET">
     {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы придётся делать самому -->
     <input type="submit" value="Найти">
@@ -13,11 +14,11 @@
 
 <table>
     <thead>
-        <th> Автор:</th>
-        <th> Заголовок:</th>
-        <th> Краткое содержание:</th>
-        <th> Дата публикации:</th>
-        <th> Рэйтинг:</th>
+    <th> Автор:</th>
+    <th> Заголовок:</th>
+    <th> Краткое содержание:</th>
+    <th> Дата публикации:</th>
+    <th> Рэйтинг:</th>
     </thead>
     {% for product in filter.qs %}
     <!-- поменяем products на filter.qs, т. к. теперь мы забираем уже отобранную по каким-то параметрам информацию -->
@@ -51,4 +52,7 @@
 {% endif %}
 
 {% endif %}
+<h3>
+    <a href="/news">На главную >>>></a>
+</h3>
 {% endblock content %}

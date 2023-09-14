@@ -6,7 +6,8 @@
 Posts
 {% endblock title %}
 {% block content %}
-<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}}, на сегодняшнее число: {{ time_now|date:'M d Y' }} </h2>
+<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}}, на сегодняшнее число: {{
+    time_now|date:'M d Y' }} </h2>
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
 <hr>
@@ -34,6 +35,9 @@ Posts
 {% else %}
 <h2>Сегодня без новостей :(</h2>
 {% endif %}
+<h3>
+    <a href="/search/">Найти публикацию >>>></a>
+</h3>
 {% endblock content %}
 <!--Про тэги
      http://htmlbook.ru/html/table -->

@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 
 from .models import Post
-from .templatetags.filters import PostFilter
+from .templatetags.filter import PostFilter
 
 
 class PostView(ListView):
