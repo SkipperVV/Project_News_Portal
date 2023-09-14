@@ -6,8 +6,8 @@
 Posts
 {% endblock title %}
 {% block content %}
-<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}}, на сегодняшнее число: {{
-    time_now|date:'M d Y' }} </h2>
+<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}},
+    на сегодняшнее число: {{ time_now|date:'d M Y' }} </h2>
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
 <hr>

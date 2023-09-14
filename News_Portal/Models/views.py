@@ -1,4 +1,5 @@
 from django.views.generic import ListView
+from datetime import datetime
 
 from .models import Post
 from .templatetags.filter import PostFilter
@@ -14,4 +15,5 @@ class PostView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        context['time_now'] = datetime.utcnow()
         return context
