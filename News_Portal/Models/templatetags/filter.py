@@ -13,4 +13,15 @@ class PostFilter(FilterSet):
             'title': ['icontains'],
             'post_time': ['gt'],
         }
+        #Выбор даты из календаря
+# class PostFilter(FilterSet):
+#     post_time = DateFilter(field_name='post_time', widget=forms.DateInput(attrs={'type': 'date'}),
+#                            lookup_expr='date__gt')
+#
+#     class Meta:
+#         model = Post
+#         fields = {
+#             'author': ['exact'],
+#             'title': ['exact'],
+#         }
 

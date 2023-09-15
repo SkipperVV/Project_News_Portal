@@ -3,13 +3,14 @@
 {% load filter %}
 {% block title %} Posts {% endblock title %}
 
+
 {% block content %}
 
 <p>Поиск публикаций</p>
 <form method="GET">
     {{ filter.form }}
-<!--    <label for="start">Start date:</label>-->
-<!--    <input type="date" id="start" name="post_time" value="2023-09-15" />-->
+<!--    <label for="post_time">Start date:</label>-->
+<!--    <input type="date" id="start" name="date" value="2023-09-15" />-->
     <input type="submit" value="Найти">
 </form>
 
@@ -20,7 +21,10 @@
         <th> Краткое содержание:</th>
         <th> Дата публикации:</th>
         <th> Рэйтинг:</th>
+
+
     {% for item in filter.qs %}
+
     <tr>
         <td width="200">{{item.author}}</td>
         <td width="300">{{item.title|censor}}</td>
@@ -29,6 +33,7 @@
         <td width="50" align="center">{{item.rating}}</td>
     </tr>
     {% endfor %}
+
 </table>
 
 <br>
@@ -61,3 +66,4 @@
     <a href="/news">На главную >>>></a>
 </h3>
 {% endblock content %}
+
