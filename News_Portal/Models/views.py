@@ -1,5 +1,6 @@
-from django.views.generic import ListView
 from datetime import datetime
+from django.views.generic import ListView
+from typing import Any
 
 from .models import Post
 from .templatetags.filter import PostFilter
@@ -10,9 +11,9 @@ class PostView(ListView):
     template_name = 'search.html'
     context_object_name = 'post'
     ordering = '-post_time'
-    paginate_by = 10
+    paginate_by = 5
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['time_now'] = datetime.utcnow()
