@@ -10,6 +10,7 @@ class PostsList(ListView):
     ordering = '-post_time'
     template_name = 'posts.html'
     context_object_name = 'posts'
+    paginate_by = 1
 
     def get_context_data(self, **kwargs):
         # С помощью super() мы обращаемся к родительским классам
@@ -33,5 +34,6 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+
 
 
