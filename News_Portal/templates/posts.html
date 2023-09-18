@@ -8,7 +8,13 @@ Posts
 {% block content %}
 <h2>Все статьи</h2>    <a href="/search/">Найти публикацию >>>> </a>
 <br>
+{% if not is_paginated %}
+<br>
 <a href="one_by_one/"> Постраничный вывод статей >>>></a>
+{% else %}
+<br>
+    <a href="/news">На главную >>></a>
+{% endif %}
 <h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}},
     на сегодняшнее число: {{ time_now|date:'d M Y' }} </h2>
 
@@ -38,7 +44,27 @@ Posts
 {% else %}
 <h2>Сегодня без новостей :(</h2>
 {% endif %}
+
+{% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a>{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}            <a href="?page={{ num }}">{{ num }}</a>        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">>>></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+{% endif %}
 {% endblock content %}
+
 <!--Про тэги
      http://htmlbook.ru/html/table -->
 

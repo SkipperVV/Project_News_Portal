@@ -7,6 +7,8 @@
 {% block content %}
 
 <p>Поиск публикаций</p>
+   <a href="/news">На главную >>>></a>
+<br><br>
 <form method="GET">
     {{ filter.form }}
 <!--    <label for="post_time">Start date:</label>-->
@@ -58,12 +60,6 @@
 <a href="?page={{ page_obj.next_page_number }}">>>></a>
 <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
 {% endif %}
-
 {% endif %}
-
-<h3>
-
-    <a href="/news">На главную >>>></a>
-</h3>
 {% endblock content %}
 
