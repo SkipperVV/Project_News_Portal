@@ -6,7 +6,7 @@
 {% block content %}
 
 <h3>Поиск публикаций</h3>
-<a href="/news">На главную >>>></a>
+<a href="/news">На главную &#128073;</a>
 <br><br>
 
 <form method="GET">
@@ -27,6 +27,7 @@
 
                 {% for item in filter.qs %}
 
+
             <tr>
                 <td width="200">{{item.author}}</td>
                 <td width="300">{{item.title|censor|truncatewords:5}}</td>
@@ -35,9 +36,10 @@
                 <td width="50" align="center">{{item.rating}}</td>
             </tr>
             {% endfor %}
+
         {% else %}
 
-          <h2 align="center"> После искомой даты статьи не публиковались.</h2>
+          <h2 align="center"> По этим кретериям поиска ничего не найдено &#128580;</h2>
 
 
         {% endif %}
