@@ -13,6 +13,7 @@ class PostsListAll(ListView):
     ordering = '-post_time'
     template_name = 'posts.html'
     context_object_name = 'posts'
+    paginate_by = 10
 
     # def sort_choice(self, item_to_sort):
     #     self.ordering = str(item_to_sort)
@@ -30,6 +31,7 @@ class PostView(ListView):
     template_name = 'search.html'
     context_object_name = 'posts'
     ordering = '-post_time'
+
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)

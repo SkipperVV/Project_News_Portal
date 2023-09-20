@@ -1,7 +1,6 @@
 {% extends 'flatpages/default.html' %}
 <b style="color:#ff0099; font-size:30px"> Page "Posts"</b>
-{% load censor_filter %}
-{% load filter %}
+<!--{% load censor_filter %}-->
 
 {% block title %} Posts {% endblock title %}
 
@@ -22,7 +21,7 @@
 <!--Запрос на метод сортировки-->
 
 
-<h2>Всего новостей {{ posts_quantity }} или... да, так и есть: {{posts|length}},
+<h2>Всего новостей: {{ posts_quantity }}, на странице: {{posts|length}},
     на сегодняшнее число: {{ time_now|date:'d M Y' }} </h2>
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
