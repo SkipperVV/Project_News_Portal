@@ -8,7 +8,7 @@
 
 <h3>
     <a href="/search/">Найти публикацию &#128073; </a>
-    {% if not is_paginated %}
+    {% if posts|length > 1 %}
     <br>
     <a href="one_by_one/"> Постраничный вывод статей &#128073;</a>
     {% else %}
