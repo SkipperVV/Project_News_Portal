@@ -53,8 +53,8 @@ class PostUpdateView(UpdateView):
         return Post.objects.get(pk=id)
 
 
-# дженерик для удаления товара
+# дженерик для удаления
 class PostDeleteView(DeleteView):
     template_name = 'delete.html'
     queryset = Post.objects.all()
-    success_url = '/posts/'
+    success_url = '/news/'
