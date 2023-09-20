@@ -8,12 +8,13 @@ Post
 {% endblock title %}
 
 {% block content %}
-<h1> {{ post.title|censor }}, {{post.author}}, опубликовано {{post.post_time}}</h1>
-<h3>Содержание: {{ post.text|censor }}</h3>
 <h3>
     <br>
     <a href="/news">На главную &#128073;</a>
-<pre></pre>
+    <pre></pre>
     <a href="/search/">Найти публикацию &#128073;</a>
 </h3>
+<h1> {{ post.title|censor }}, автор: {{post.author}}, опубликовано {{post.post_time}}</h1>
+<h3>Содержание: {{ post.text|censor }}</h3>
+
 {% endblock content %}

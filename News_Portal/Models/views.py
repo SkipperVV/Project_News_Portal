@@ -1,8 +1,9 @@
 from datetime import datetime
 from typing import Any
 
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
+from .forms import PostForm
 from .models import Post
 from .templatetags.filter import PostFilter
 
@@ -35,3 +36,25 @@ class PostView(ListView):
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['time_now'] = datetime.utcnow()
         return context
+
+
+class PostCreateView(CreateView):
+    template_name = 'create.html'
+    form_class = PostForm
+
+
+class PostUpdateView(UpdateView):
+    template_name = 'create.html'
+    form_class = PostForm
+
+    # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
+    def get_object(self, **kwargs):
+        id = self.kwargs.get('pk')
+        return Post.objects.get(pk=id)
+
+
+# дженерик для удаления товара
+class PostDeleteView(DeleteView):
+    template_name = 'delete.html'
+    queryset = Post.objects.all()
+    success_url = '/posts/'

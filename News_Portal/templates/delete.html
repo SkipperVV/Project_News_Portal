@@ -1,0 +1,31 @@
+{% extends 'flatpages/default.html' %}
+{% load censor_filter %}
+{% block title %} Delete chosen post {% endblock title %}
+
+{% block content %}
+<br>
+<a href="/news">На главную &#128073;</a>
+<br>
+<h2>Вы действительно хотите удалить этот пост?</h2>
+
+<table>
+    <tr align="left">
+        <th> Автор:</th>
+        <th> Заголовок:</th>
+        <th> Краткое содержание:</th>
+        <th> Дата публикации:</th>
+        <th> Рэйтинг:</th>
+    </tr>
+    <tr>
+        <td width="200">{{post.author}}</td>
+        <td width="300">{{post.title|censor}}</td>
+        <td width="500">{{post.text|censor|truncatewords:20}}</td>
+        <td width="200">{{post.post_time}}</td>
+        <td width="50" align="center">{{post.rating}}</td>
+    </tr>
+</table>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %}

@@ -65,6 +65,9 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
 
+    def get_absolute_url(self):
+        return f'/news/{self.id}'
+
     def __str__(self):
         return f'{self.author}: {self.title}'
 
