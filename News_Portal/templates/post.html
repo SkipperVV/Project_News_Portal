@@ -17,6 +17,7 @@ Post
 <h1> {{ post.title|censor }}, автор: {{post.author}}, опубликовано {{post.post_time}}</h1>
 <h3>Содержание: {{ post.text|censor }}</h3>
 <hr>
+<br>
         <h3 align="center"> <a href="{% url 'update' post.id %}"><u> Редактировать &#128260;</u></a></h3>
         <h3 align="center"><a href="{% url 'delete' post.id %}"><u> Удалить &#128683; </u></a></h3>
 
