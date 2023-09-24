@@ -11,4 +11,5 @@ urlpatterns = [
     path('create/', PostCreateView.as_view(), name='create'),
     path('create/<int:pk>', PostUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', PostDeleteView.as_view(), name='delete'),
+
 ]

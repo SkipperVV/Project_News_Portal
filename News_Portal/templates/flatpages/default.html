@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,18 +9,24 @@
 <body>
 
 <p class="aligncenter">
-    <img width="5%" src="{% static 'images/news.jpeg' %}"  align="center" alt="news" >
+    <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
 </p>
 
 <b style="color:#ff0099; font-size:30px"> Новостной портал</b>
 
 <style> .aligncenter {text-align: center;} </style>
 
+
 {% block content %}
-
-
-<h1>Все новости</h1>
-{{ posts }}
+    <h1>Все новости</h1>
+    {{ posts }}
 {% endblock content %}
+
+<br>
+<br>
+<br>
+
+<a href="/accounts/logout/"> Sign Out </a>
+
 </body>
 </html>

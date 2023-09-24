@@ -12,11 +12,12 @@ pip install django
 (venv) ~/django-projects $ django-admin startproject News_Portal
 
 5. Создаем двух пользователей:
+(можно создать admin через <python manage.py createsuperuser>)
+Через Django> администратора и супервайзера:
+
 python manage.py shell
 from django.contrib.auth.models import User
-администратор Django:
 admin = User.objects.create_user(username="admin", password="admin")
-и Супервайзера:
 supervisor = User.objects.create_user(username="root", password="root")
 
 6. Переходим в директорию проекта c (manage.py):

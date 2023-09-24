@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import Any
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from .forms import PostForm
@@ -32,7 +34,6 @@ class PostView(ListView):
     context_object_name = 'posts'
     ordering = '-post_time'
 
-
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
@@ -40,14 +41,16 @@ class PostView(ListView):
         return context
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'create.html'
     form_class = PostForm
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    # login_url = '/login/'
     template_name = 'create.html'
     form_class = PostForm
+
 
     # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
     def get_object(self, **kwargs):
@@ -56,7 +59,7 @@ class PostUpdateView(UpdateView):
 
 
 # дженерик для удаления
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'

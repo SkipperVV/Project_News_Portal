@@ -105,3 +105,105 @@ cвязь «один к одному» с встроенной моделью п
 На этих страницах пользователь может добавить или редактировать новости.
 
 Добавьте страницу удаления новостей /news/<int:pk>/delete/. На ней после подтверждения пользователь может удалить страницу с новостью.
+
+------3/8  D8.3. Доступ к страницам сайта---------------------------------------
+UpdateView. Реализуйте для него проверку наличия аутентификации с помощью миксина. В файле настроек проекта добавьте адрес, по которому
+Django будет перенаправлять пользователей после успешного входа в систему.
+
+------3/8   D8.4. Возможности регистрации в Django---------------------------------------
+Используя только пакет allauth, реализуйте в своём приложении News Portal возможность входа в систему, а также
+регистрации по почте или через Google-аккаунт. В файле настроек добавьте адрес на страницу входа,
+по которому перенаправится неавторизованный пользователь при попытке перейти на защищённые страницы.
+
+Шаги:
+pip install django-allauth
+
+TEMPLATES + 'django.template.context_processors.request',
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+INSTALLED_APPS +
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    'allauth.socialaccount.providers.google',
+
+LOGIN_URL = '/accounts/login/'
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+'allauth.account.middleware.AccountMiddleware'
+must be added to settings.MIDDLEWARE
+
+После завершения этих настроек, мы должны заглянуть в файл конфигурации URL и внести изменения в нём:
+
+urlpatterns = [
++    path('sign/', include('sign.urls')),
+
+написать базовый шаблон templates/account/base.html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block head_title %}Registration & Login{% endblock head_title %}</title>
+    </head>
+    <body>
+        {% block body %}
+        {% block content %}
+        {% endblock content %}
+        {% endblock body %}
+        {% block extra_body %}
+        {% endblock extra_body %}
+    </body>
+</html>
+
+После модификации файла настроек обязательно необходимо выполнить миграцию.
+python manage.py migrate
+
+Регистрация посредством провайдера
+В случае регистрации и входа через провайдер необходимо проделать ещё некоторые действия.
+Для начала нужно войти в панель администратора и перейти на вкладку Sites:
+Далее необходимо перейти на страницу единственного объекта и отредактировать следующим образом:
+Domain name: 127.0.0.1
+Сохраните изменения.
+
+Далее необходимо настроить API Google для работы с вашим сервисом. Перейдите на страницу разработчиков.
+Вам будет предложено создать проект.
+Сделал. Ссылка:
+https://console.cloud.google.com/apis/dashboard?pli=1&project=myproject-399913&supportedpurview=project
+
+После чего вам необходимо получить Client ID.
+Для этого перейдите по следующей ссылке: <+Enable APIS and Services>
+Подключите следующее API: IAM Service Account Credentials API (найти поисковиком)
+Enable
+Credentials (Реквизиты для входа)
+Create OAuth client ID
+Client ID: 564458227682-tp5a4ooq35lnssoh6rmrrk0r9qr2sgch.apps.googleusercontent.com
+Client secret: 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
+(Моя Страница credentials: https://console.cloud.google.com/apis/credentials?project=myproject-399913
+<+Create Credentials>)
+
+Вы увидите окно с идентификатором клиента и секретным ключом. Не закрывайте это окно.
+Откройте панель администратора на странице:
+http://127.0.0.1:8000/admin/socialaccount/socialapp/
+и создайте новое приложение Social applications.
+
+Название, как и провайдер, можно вписать Google. В поля Client ID и Secret Key введите полученные
+на консоли разработчиков строки с идентификатором и ключом и сохраните изменения на панели администратора.
+
+После чего проверьте работоспособность путём попытки авторизации через Google на
+странице авторизации вашего свежесозданного сайта. Если все действия выполнены верно,
+вам должно быть предложено завершить регистрацию.
+------------
+Ссылка на созданный сайт Google
+https://console.cloud.google.com/apis/credentials?project=myproject-399913
