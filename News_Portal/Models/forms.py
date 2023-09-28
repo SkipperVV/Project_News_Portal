@@ -1,4 +1,4 @@
-from django.forms import ModelForm, BooleanField  # Импортируем true-false поле
+from django.forms import ModelForm, BooleanField  # true-false поле
 from .models import Post
 
 

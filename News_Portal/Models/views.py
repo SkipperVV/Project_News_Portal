@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from .forms import PostForm
