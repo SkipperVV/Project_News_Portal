@@ -207,3 +207,81 @@ http://127.0.0.1:8000/admin/socialaccount/socialapp/
 ------------
 Ссылка на созданный сайт Google
 https://console.cloud.google.com/apis/credentials?project=myproject-399913
+---------------------------
+При помощи панели администратора Django добавьте две группы common и authors для всех пользователей и авторов соответственно.
+При регистрации пользователь должен автоматически добавляться в группу common. Добавьте кнопку «Стать автором»,
+при нажатии на которую, пользователь добавляется в группу authors.
+------------
+pip install django-allauth
+в файле настроек нужно внести следующие изменения:
+# Specify the context processors as follows:
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Already defined Django-related contexts here
+
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
+            ],
+        },
+    },
+]
+
+AUTHENTICATION_BACKENDS = [
+    ...
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+INSTALLED_APPS = [
+    ...
+    # The following apps are required:
+    'django.contrib.auth',
+    'django.contrib.messages',
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    'allauth.socialaccount.providers.google',
+]
+
+
+LOGIN_URL = '/accounts/login/'
+
+SITE_ID = 1
+
+Далее нам необходимо добавить бэкенды аутентификации: встроенный бэкенд Django, реализующий аутентификацию по username,
+а также бэкенд аутентификации, предоставленный пакетом allauth. Грубо говоря, нам нужно «включить» аутентификацию
+как по username, так и специфичную по email или сервис-провайдеру.
+
+Начнём с регистрации по электронной почте.
+В файл настроек проекта мы должны внести дополнительные параметры:
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+конфигурации URL и внести изменения в нём:
+
+from django.contrib import admin
+from django.urls import path
+from django.urls import include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('protect.urls')),
+    path('sign/', include('sign.urls')),
+    path('accounts/', include('allauth.urls')),
+]
+После модификации файла настроек обязательно необходимо выполнить миграцию.
