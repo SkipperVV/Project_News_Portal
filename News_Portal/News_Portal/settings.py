@@ -15,6 +15,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 SITE_ID = 1
 
+ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 

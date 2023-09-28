@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+<h1>Страница авторизованного пользователя {{request.user.username}}</h1>
+
+<h2> Личные данные пользователя </h2>
+<br>
+{% if not is_author %}
+<button> <a href="sign/upgrade/"> Я регистрируюсь как Автор!</a> </button>
+{% endif %}
+<br><br>
+
+{% if not is_common %}
+<button> <a href="sign/addcommon/"> Добавить общую регистрацию</a> </button>
+{% endif %}
+<br><br>
+
+<button> <a href="sign/logout/">Выйти</a> </button>
+
+<h3>
+    <a href="news/search/">Найти публикацию &#128073; </a>
+    {% if posts|length > 1 %}
+    <br>
+    <a href="news/one_by_one/"> Постраничный вывод статей &#128073;</a>
+    {% else %}
+    <br>
+    <a href="/news">На главную &#128073;</a>
+    {% endif %}
+    <br>
+    <a href="news/create">Добавить пост &#128073;</a>
+</h3>
+{% endblock %}

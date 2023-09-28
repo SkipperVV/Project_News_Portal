@@ -9,7 +9,6 @@ from .forms import PostForm
 from .models import Post
 from .templatetags.filter import PostFilter
 
-
 class PostsListAll(ListView):
     model = Post
     ordering = '-post_time'
