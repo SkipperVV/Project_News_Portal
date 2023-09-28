@@ -1,5 +1,3 @@
-'''Импортируем класс, который говорит нам о том,
-что в этом представлении мы будем выводить список объектов из БД'''
 from django.views.generic import ListView, DetailView
 from .models import Post
 from datetime import datetime
@@ -23,12 +21,6 @@ class PostsList(ListView):
         context['posts_quantity'] = len(Post.objects.all())# или в html {{posts|length}}
         # pprint(context)
         return context
-
-    '''В этот раз мы будем использовать DetailView. Он отличается от ListView тем, что возвращает конкретный объект, 
-    а не список всех объектов из БД. Адрес, однако, будет немного отличаться. В него надо будет добавить идентификатор 
-    товара, который мы хотим получить.
-    Для этого снова перейдём в файл Models/views.py и добавим в него представление PostDetail, 
-    которое будет выдавать информацию об одной статье.'''
 
 class PostDetail(DetailView):
     model = Post

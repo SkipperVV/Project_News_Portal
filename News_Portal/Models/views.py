@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Any
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from .forms import PostForm
@@ -40,12 +40,15 @@ class PostView(ListView):
         return context
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(PermissionRequiredMixin, CreateView):
+    permission_required = ('Models.add_post', 
+                           'Models.change_post')
     template_name = 'create.html'
     form_class = PostForm
 
 
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+class PostUpdateView(PermissionRequiredMixin, UpdateView):
+    permission_required = ('Models.change_post',)
     # login_url = '/login/'
     template_name = 'create.html'
     form_class = PostForm
@@ -58,7 +61,8 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 
 # дженерик для удаления
-class PostDeleteView(LoginRequiredMixin, DeleteView):
+class PostDeleteView(PermissionRequiredMixin, DeleteView):
+    permission_required = ('Models.delete_post')    
     template_name = 'delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
