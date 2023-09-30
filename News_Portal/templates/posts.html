@@ -34,6 +34,7 @@
         <th> Заголовок:</th>
         <th> Краткое содержание:</th>
         <th> Дата публикации:</th>
+        <th> Категория:</th>
         <th> Рэйтинг:</th>
         <th> Ред-ть:</th>
         <th> Удалить:</th>
@@ -44,8 +45,9 @@
     <tr>
         <td>  <a href="{% url 'posts' item.id %}">{{ item.author }}</a> </td>
         <td width="300">{{item.title|censor}}</td>
-        <td width="500">{{item.text|censor|truncatewords:5}}</td>
+        <td width="300">{{item.text|censor|truncatewords:5}}</td>
         <td width="200">{{item.post_time}}</td>
+        <td width="100">{{item.category}}</td>
         <td width="50" align="center">{{item.rating}}</td>
         <td align="center"> <a href="{% url 'update' item.id %}"><u>&#128260;</u></a></td>
         <td align="center"><a href="{% url 'delete' item.id %}"><u> &#128683; </u></a></td>
