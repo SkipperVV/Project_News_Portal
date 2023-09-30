@@ -8,11 +8,15 @@
 <br>
 {% if not is_author %}
 <button> <a href="sign/upgrade/"> Я регистрируюсь как Автор!</a> </button>
+{%else%}
+<a> Пользователь "{{ user }}" зарегестрирован как "Автор"</a>
 {% endif %}
-<br><br>
+<br>
 
 {% if not is_common %}
 <button> <a href="sign/addcommon/"> Добавить общую регистрацию</a> </button>
+{%else%}
+<a> и имеет общую регистрацию</a>
 {% endif %}
 <br><br>
 
