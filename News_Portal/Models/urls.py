@@ -17,7 +17,6 @@ urlpatterns = [
     path('create/<int:pk>', PostUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', PostDeleteView.as_view(), name='delete'),
 
-    path('admin/', admin.site.urls),
     path('', include('protect.urls')),
     path('sign/', include('sign.urls')),
     path('accounts/', include('allauth.urls')),
