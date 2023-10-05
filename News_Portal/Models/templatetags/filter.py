@@ -21,5 +21,6 @@ class PostFilter(FilterSet):
         model = Post
         fields = {
             'author': ['exact'],
+            # 'category': ['contains'],
             'title': ['icontains'],
         }

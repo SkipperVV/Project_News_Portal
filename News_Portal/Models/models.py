@@ -51,8 +51,7 @@ class Author(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    
-
+    subscribers = models.ManyToManyField(User, related_name='categories')#для обращения через user.categories.all
     def __str__(self):
         return f'{self.name}'
 
@@ -65,6 +64,7 @@ class Post(models.Model):
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
+
 
     def get_absolute_url(self):
         return f'/news/{self.id}'

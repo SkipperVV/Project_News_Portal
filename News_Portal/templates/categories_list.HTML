@@ -26,7 +26,7 @@
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
 <hr>
-{% if posts %}
+{% if categories_posts_list %}
 <table>
     <thead>
     <tr align="left">
@@ -41,7 +41,7 @@
 
     </tr>
     </thead>
-    {% for item in posts %}
+    {% for item in categories_posts_list %}
     <tr>
         <td>  <a href="{% url 'posts' item.id %}">{{ item.author }}</a> </td>
         <td width="300">{{item.title|censor}}</td>
@@ -49,7 +49,7 @@
         <td width="200">{{item.post_time}}</td>
         <td>
             {% for cat in item.category.all %}
-                {{ cat.name }}
+            <a ref = "{% url 'category_list' cat.id %}" > {{category}}</a>
             {% endfor %}
         </td>
         <!-- <td width="100">{{item.category}}</td> -->
@@ -60,7 +60,7 @@
     {% endfor %}
 </table>
 {% else %}
-<h2>Сегодня без новостей &#129335;</h2>
+<h2>Сегодня без новостей :(</h2>
 {% endif %}
 <br>
 {% if is_paginated %}

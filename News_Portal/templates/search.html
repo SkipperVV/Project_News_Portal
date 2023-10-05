@@ -24,6 +24,7 @@
         <th> Автор:</th>
         <th> Заголовок:</th>
         <th> Краткое содержание:</th>
+        <!-- <th> category:</th> -->
         <th> Дата публикации:</th>
         <th> Рэйтинг:</th>
 
@@ -34,6 +35,11 @@
         <td>  <a href="{% url 'posts' item.id %}">{{ item.author }}</a> </td>
         <td width="300">{{item.title|censor|truncatewords:5}}</td>
         <td width="500">{{item.text|censor|truncatewords:5}}</td>
+        <!-- <td>
+            {% for cat in item.category.all %}
+                {{ cat.name }}
+            {% endfor %}
+        </td> -->
         <td width="200">{{item.post_time}}</td>
         <td width="50" align="center">{{item.rating}}</td>
     </tr>
