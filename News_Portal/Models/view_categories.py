@@ -30,7 +30,7 @@ def subscribe(request, pk):
     category=Category.objects.get(id=pk)
     category.subscribers.add(user)
 
-    message = f'Вы успешно подписались на рассылку по категории "{category}"'
+    message = f'Вы успешно подписались на рассылку по категории '
     return render(request, 'suscribe.html',{'category' : category, 'message' : message})
 
 
