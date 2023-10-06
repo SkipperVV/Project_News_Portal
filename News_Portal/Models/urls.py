@@ -21,6 +21,6 @@ urlpatterns = [
     path('sign/', include('sign.urls')),
     path('accounts/', include('allauth.urls')),
 
-    path('categories/<int:pk>', Categories_list_View.as_view(), name='category_list'),
+    path('categories/<int:pk>', Categories_list_View.as_view(), name='categories_list'),
     path('categories/<int:pk>/subscribe', subscribe, name='subscribe'),
 ]

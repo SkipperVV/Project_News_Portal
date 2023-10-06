@@ -49,7 +49,7 @@
         <td width="200">{{item.post_time}}</td>
         <td>
             {% for cat in item.category.all %}
-                {{ cat.name }}
+            <a href = "{% url 'categories_list' cat.id %}" > {{cat}}</a>
             {% endfor %}
         </td>
         <!-- <td width="100">{{item.category}}</td> -->
