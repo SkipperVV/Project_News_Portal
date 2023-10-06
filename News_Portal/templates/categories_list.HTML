@@ -59,6 +59,14 @@
     </tr>
     {% endfor %}
 </table>
+<p class="text-center">
+        {% if not is_subscriber %}            
+            <button><a href="{% url 'subscribe' category.id %}">Подписаться на категорию "{{category}}"</a> </button>>      
+        {% else %}
+            <h3>Вы уже подписаны на категорию "{{category}}" </h3> 
+        {% endif %}
+</p>
+
 {% else %}
 <h2>Сегодня без новостей :(</h2>
 {% endif %}
