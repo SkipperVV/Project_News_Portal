@@ -6,4 +6,4 @@ class ModelsConfig(AppConfig):
     name = 'Models'
 
     def ready(self):
-        import News_Portal.settings
+        import Models.signals

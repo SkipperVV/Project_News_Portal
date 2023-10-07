@@ -25,13 +25,15 @@ def send_notifications(preview, pk, title, subscribers):
 
 
 @receiver(m2m_changed, sender=PostCategory)
-def notify_about_new_post(sender, instance, subscribers=None, **kwargs):  # check subscribers=None
+def notify_about_new_post(sender, instance, **kwargs):  # check subscribers=None
     if kwargs['action'] == 'post_add':
-        categories = instance.categories.all()
+        categories = instance.category.all()
         subscribers_emails = []
 
         for cat in categories:
-            subscribers += cat.subscribers.all()
+            subscribers = cat.subscribers.all()
             subscribers_emails += [s.email for s in subscribers]
 
         send_notifications(instance.preview(), instance.pk, instance.title, subscribers_emails)
+'''чтобы в subscribers  присваивалось новое значение, забирая на каждой итерации 
+цикла всех подписчиков какой-то конкретной категории.'''
