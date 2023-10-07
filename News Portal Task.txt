@@ -311,3 +311,11 @@ email, указанный при регистрации, приходит пис
 На самом сайте должна быть возможность пользователю подписаться на категорию (добавьте маленькую 
 кнопку «Подписаться», когда пользователь находится на странице новостей в какой-то категории).
 https://disk.yandex.ru/d/9W5k894mFdUNOQ
+
+Установка и настройка python-dotenv для хранения данных в переменных окружения:
+https://disk.yandex.ru/d/1gSjj1gIQ-rnfg
+
+pip install python-dotenv
+В settings.py добавить:
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
