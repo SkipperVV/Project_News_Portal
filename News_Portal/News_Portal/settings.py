@@ -17,6 +17,21 @@ SITE_ID = 1
 
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "skippervasin@gmail.com"
+# EMAIL_HOST_PASSWORD = "Skipper629531"
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -45,7 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'Models',
+    'Models.apps.ModelsConfig',
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_filters',
@@ -140,7 +155,7 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+SITE_URL = 'http://127.0.0.1:8000'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
