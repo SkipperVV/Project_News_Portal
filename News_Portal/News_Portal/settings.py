@@ -22,16 +22,16 @@ SITE_ID = 1
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'vasinvladimir@inbox.ru'
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'vasinvladimir@inbox.ru'
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') #mail.ru пароль для внешнего приложения
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+EMAIL_USE_SSL =False
+EMAIL_USE_TLS =True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#все уведомления будут приходить в консоль.
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'#Чтобы уведомления приходили на почту
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#все уведомления будут приходить в консоль.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'#Чтобы уведомления приходили на почту
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
