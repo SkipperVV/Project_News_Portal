@@ -3,6 +3,7 @@ from typing import Any
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from .forms import PostForm
@@ -34,18 +35,39 @@ class PostView(ListView):
     ordering = '-post_time'
 
     def get_context_data(self, **kwargs):
+        today=datetime.date.today()
+        
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['time_now'] = datetime.utcnow()
+        context['how_many'] = len(Post.objects.filter(author=self.author, post_time=today))
         return context
 
-
 class PostCreateView(PermissionRequiredMixin, CreateView):
+    form_class = PostForm
+    model = Post
+    template_name = 'create.html'
     permission_required = ('Models.add_post', 
                            'Models.change_post')
-    template_name = 'create.html'
-    form_class = PostForm
-
+    context_object_name = 'posts_today'
+    
+    #Check if posts > 3 per day
+    def check_quantity_of_posts_per_day(self, form):
+        post=form.save(commit=False)
+        form.instance.author=self.request.user.author
+        today=datetime.date.today()
+        return render(self.request, 'refused_to_post.html')
+        # if len(Post.objects.filter(author=post.author, post_time=today)) > 3:
+        #     #then refuse to post
+        #     return render(self.request, 'refused_to_post.html')
+        # post.save()
+        # return super().form_valid(form)
+    def get_context_data(self, **kwargs):               
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        context['time_now'] = datetime.utcnow()
+        context['how_many'] = 3#len(Post.objects.filter(author=self.author, post_time=datetime.date.today()))
+        return context
 
 class PostUpdateView(PermissionRequiredMixin, UpdateView):
     permission_required = ('Models.change_post',)

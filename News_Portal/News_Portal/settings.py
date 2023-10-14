@@ -30,8 +30,8 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_USE_SSL =False
 EMAIL_USE_TLS =True
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#все уведомления будут приходить в консоль.
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'#Чтобы уведомления приходили на почту
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#все уведомления будут приходить в консоль.
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'#Чтобы уведомления приходили на почту
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')

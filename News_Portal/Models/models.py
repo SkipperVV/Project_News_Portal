@@ -70,7 +70,7 @@ class Post(models.Model):
         return f'/news/{self.id}'
 
     def __str__(self):
-        return f'{self.author}: {self.title}'
+        return f'{self.author}: {self.title} , {self.rating}'
 
     @staticmethod  # Post.get_best_post()
     def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи

@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 from .models import Post
 from datetime import datetime
+from .templatetags.filter import PostFilter
 
 # from pprint import pprint
 class PostsList(ListView):
@@ -26,6 +27,19 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+
+# class PostDetail(ListView):
+#     model = Post
+#     template_name = 'post.html'
+#     context_object_name = 'posts_count'
+
+#     def get_context_data(self, form):
+#         # context = super().get_context_data(**kwargs)
+#         form.instance.author=self.request.user.author
+#         how_many = len(Post.objects.filter(author=self.author, post_time=datetime.date.today()))
+#         today = datetime.date.today()
+#         return super().form_valid(form)
+
 
 
 
