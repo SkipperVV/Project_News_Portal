@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 from typing import Any
 
 from django.contrib.auth.decorators import login_required
@@ -56,12 +56,13 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
         post=form.save(commit=False)
         form.instance.author=self.request.user.author
         today=datetime.date.today()
-        return render(self.request, 'refused_to_post.html')
-        # if len(Post.objects.filter(author=post.author, post_time=today)) > 3:
-        #     #then refuse to post
-        #     return render(self.request, 'refused_to_post.html')
-        # post.save()
-        # return super().form_valid(form)
+        # return render(self.request, 'refused_to_post.html')
+        if len(Post.objects.filter(author=post.author, post_time=today)) > 3:
+            #then refuse to post
+            return render(self.request, 'refused_to_post.html')
+        post.save()
+        return super().form_valid(form)
+    
     def get_context_data(self, **kwargs):               
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
