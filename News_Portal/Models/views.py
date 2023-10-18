@@ -17,13 +17,9 @@ class PostsListAll(ListView):
     context_object_name = 'posts'
     paginate_by = 10
 
-    # def sort_choice(self, item_to_sort):
-    #     self.ordering = str(item_to_sort)
-    #     return self.ordering
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['time_now'] = datetime.utcnow()
+        context['time_now'] = datetime.datetime.utcnow()
         context['posts_quantity'] = len(Post.objects.all())
         return context
 
@@ -35,12 +31,11 @@ class PostView(ListView):
     ordering = '-post_time'
 
     def get_context_data(self, **kwargs):
-        today=datetime.date.today()
         
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
-        context['time_now'] = datetime.utcnow()
-        context['how_many'] = len(Post.objects.filter(author=self.author, post_time=today))
+        quantity_of_posts_today = today - datetime.timedelta(days=1)
+        context['time_now'] = datetime.datetime.utcnow()
         return context
 
 class PostCreateView(PermissionRequiredMixin, CreateView):
@@ -52,12 +47,12 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
     context_object_name = 'posts_today'
     
     #Check if posts > 3 per day
-    def check_quantity_of_posts_per_day(self, form):
+    def form_valid(self, form):
         post=form.save(commit=False)
         form.instance.author=self.request.user.author
         today=datetime.date.today()
-        # return render(self.request, 'refused_to_post.html')
-        if len(Post.objects.filter(author=post.author, post_time=today)) > 3:
+        limit = today - datetime.timedelta(days=1)
+        if len(Post.objects.filter(author=post.author, post_time__gte=limit)) >= 3:
             #then refuse to post
             return render(self.request, 'refused_to_post.html')
         post.save()
