@@ -66,7 +66,7 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):               
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
-        context['time_now'] = datetime.utcnow()
+        context['time_now'] = datetime.datetime.utcnow()
         context['how_many'] = 3#len(Post.objects.filter(author=self.author, post_time=datetime.date.today()))
         return context
 
