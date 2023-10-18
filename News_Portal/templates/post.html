@@ -16,8 +16,8 @@ Post
     <a href="/news/create">Добавить еще пост &#128073;</a>
 </h3>
 <h1>Опубликовано</h1>
-<!-- <h2> Товарищ '{{ post.author }}', на сегодня {{posts.today}}, это ваша {{ posts_count.how_many }}-я публикация </h2> -->
-<h1> Автор: {{post.author}}, дата и время поста {{post.post_time}},<br>Заголовок: {{ post.title|censor }}</h1>
+<h1> Автор: "{{post.author}}", дата и время поста: {{post.post_time}},<br><br>Заголовок: "{{ post.title|censor }}"</h1>
+
 <h3>Содержание: {{ post.text|censor }}</h3>
 <hr>
 <br>

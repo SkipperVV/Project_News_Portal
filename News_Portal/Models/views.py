@@ -34,7 +34,6 @@ class PostView(ListView):
         
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
-        quantity_of_posts_today = today - datetime.timedelta(days=1)
         context['time_now'] = datetime.datetime.utcnow()
         return context
 
@@ -46,13 +45,13 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
                            'Models.change_post')
     context_object_name = 'posts_today'
     
-    #Check if posts > 3 per day
     def form_valid(self, form):
-        post=form.save(commit=False)
+        post = form.save(commit=False)
         form.instance.author=self.request.user.author
-        today=datetime.date.today()
+        today = datetime.date.today()
         limit = today - datetime.timedelta(days=1)
-        if len(Post.objects.filter(author=post.author, post_time__gte=limit)) >= 3:
+            #Check if posts > 3 per day
+        if len(Post.objects.filter(author=post.author, post_time__gte = limit)) >= 3:
             #then refuse to post
             return render(self.request, 'refused_to_post.html')
         post.save()
@@ -62,7 +61,7 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['time_now'] = datetime.datetime.utcnow()
-        context['how_many'] = 3#len(Post.objects.filter(author=self.author, post_time=datetime.date.today()))
+        # context['how_many'] = Post.objects.filter()
         return context
 
 class PostUpdateView(PermissionRequiredMixin, UpdateView):
