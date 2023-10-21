@@ -41,6 +41,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
+# формат даты, которую будет воспринимать наш задачник
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+# если задача не выполняется за 25 секунд, то она автоматически снимается
+APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -71,6 +76,9 @@ INSTALLED_APPS = [
 
     'sign',
     'protect',
+
+    #отправлять периодические письма
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
