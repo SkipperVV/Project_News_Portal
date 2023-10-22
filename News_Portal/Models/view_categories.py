@@ -33,5 +33,12 @@ def subscribe(request, pk):
     message = f'Вы успешно подписались на рассылку по категории '
     return render(request, 'suscribe.html',{'category' : category, 'message' : message})
 
+@login_required
+def unsubscribe(request, pk):    
+    user=request.user
+    category=Category.objects.get(id=pk)
+    category.subscribers.remove(user)
 
+    message = f'Вы успешно отписались от рассылки по категории '
+    return render(request, 'suscribe.html',{'category' : category, 'message' : message})
 

@@ -1,3 +1,6 @@
 /venv/
 /News_Portal/.env
 /Исправить миграции.url
+.env
+/News_Portal/BackUp/
+

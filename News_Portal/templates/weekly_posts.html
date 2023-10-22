@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Статьи за прошедшую неделю.</title>
+</head>
+<body>
+    <h2>Дорогой дружок, <br>
+        всю эту неделю мы, не покладая рук, собирали для тебя материал. <br>
+        Вот тебе статьи, опубликованные за прошедшую неделю, согласно твоей подписке:
+    </h2>
+<ul>
+    {% for post in posts_per_week %}
+    <li><a href="{{link}}{{ post.get_absolute_url }}">Автор: "{{ post.author }}", Содержание: {{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

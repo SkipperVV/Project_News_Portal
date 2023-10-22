@@ -32,7 +32,8 @@ def notify_about_new_post(sender, instance, **kwargs):  # check subscribers=None
 
         for cat in categories:
             subscribers = cat.subscribers.all()
-            subscribers_emails += [s.email for s in subscribers]
+            subscribers_emails += [i.email for i in subscribers]
+            print(*subscribers_emails)
 
         send_notifications(instance.preview(), instance.pk, instance.title, subscribers_emails)
 '''чтобы в subscribers  присваивалось новое значение, забирая на каждой итерации 

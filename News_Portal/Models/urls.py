@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import PostView, PostsListAll, PostCreateView, PostDeleteView, PostUpdateView
 from .views_old import PostsList, PostDetail
-from .view_categories import Categories_list_View, subscribe
+from .view_categories import Categories_list_View, subscribe, unsubscribe
 
 from django.contrib import admin
 from django.urls import path
@@ -23,4 +23,5 @@ urlpatterns = [
 
     path('categories/<int:pk>', Categories_list_View.as_view(), name='categories_list'),
     path('categories/<int:pk>/subscribe', subscribe, name='subscribe'),
+    path('categories/<int:pk>/unsubscribe', unsubscribe, name='unsubscribe'),
 ]

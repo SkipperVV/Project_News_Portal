@@ -63,17 +63,18 @@
         {% if not is_subscriber %}            
             <button><a href="{% url 'subscribe' category.id %}">Подписаться на категорию "{{category}}"</a> </button>     
         {% else %}
-            <h3>Вы уже подписаны на категорию "{{category}}" </h3> 
+            <h3>Вы уже подписаны на категорию "{{category}}"
+                 <button><a href="{% url 'unsubscribe' category.id %}">Отписаться</a> </button></h3> 
             <h3>Статьи выбранной категории: </h3> 
-
+            
             {% for item in categories_posts_list %}
             Автор- 
-                {{item.author}}, 
+            {{item.author}}, 
             Заголовок:
-                "{{item.title}}" 
-                <br>
-            {% endfor %}
-            
+            "{{item.title}}" 
+            <br>
+            {% endfor %}        
+                      
         {% endif %}
 </p>
 
