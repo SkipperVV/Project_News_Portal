@@ -8,25 +8,25 @@ from django.core.management.base import BaseCommand
 from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
-
+from django.core.mail import send_mail
  
  
 logger = logging.getLogger(__name__)
  
- 
-# наша задача по выводу текста на экран
 def my_job():
-    #  Your job processing logic here... 
-    print('hello from job')
-
- 
+    print('Email sent')
+    send_mail(
+        'Email',
+        'Привет!',
+        from_email='skippervasin@gamail.com',
+        recipient_list=['vasinvladimir@inbox.ru'],
+    )
  
 # функция, которая будет удалять неактуальные задачи
 def delete_old_job_executions(max_age=604_800):
     """This job deletes all apscheduler job executions older than `max_age` from the database."""
     DjangoJobExecution.objects.delete_old_job_executions(max_age)
- 
- 
+  
 class Command(BaseCommand):
     help = "Runs apscheduler."
  
@@ -37,7 +37,7 @@ class Command(BaseCommand):
         # добавляем работу нашему задачнику
         scheduler.add_job(
             my_job,
-            trigger=CronTrigger(second="*/10"),  # То же, что и интервал, но задача тригера таким образом более понятна django
+            trigger=CronTrigger(second='*/10'),#(day="fri", hour='9'),  # То же, что и интервал, но задача тригера таким образом более понятна django
             id="my_job",  # уникальный айди
             max_instances=1,
             replace_existing=True,

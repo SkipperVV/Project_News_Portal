@@ -83,3 +83,4 @@ class PostDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
+
