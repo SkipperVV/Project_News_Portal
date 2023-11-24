@@ -1,5 +1,6 @@
 import os
 from celery import Celery
+from .tasks import *
  
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'News_Portal.settings')
  
