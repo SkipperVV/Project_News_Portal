@@ -7,6 +7,7 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .forms import PostForm
 from .models import Post
 from .templatetags.filter import PostFilter
+from .tasks import info_after_new_post
 
 
 class PostsListAll(ListView):
@@ -54,6 +55,8 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
             # then refuse to post
             return render(self.request, 'refused_to_post.html')
         post.save()
+        #Реализовать рассылку уведомлений подписчикам после создания новости
+        info_after_new_post.delay(form.instance.pk)
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):

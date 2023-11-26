@@ -9,19 +9,19 @@ import datetime
 @shared_task
 def info_after_new_post(pk):
     post=Post.objects.get(pk=pk)
-    categories = post.post_category.all()
-    title=post.post_title
+    categories = post.category.all()
+    title=post.title
     suscribers_emails=[]
 
     for category in categories:
-        suscribers_users=category.suscribers.all()
+        suscribers_users=category.subscribers.all()
         for sub_users in suscribers_users:
             suscribers_emails.append(sub_users.email)
     
     html_content = render_to_string(
         'post_crated_email.html',
         {
-            'text': f'{post.post_title}',
+            'text': f'{post.title}',
             'link': f'{settings.SITE_URL}/news/{pk}',
         }
     )
