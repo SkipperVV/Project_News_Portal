@@ -7,10 +7,12 @@ from .view_categories import Categories_list_View, subscribe, unsubscribe
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+# cashe
+from django.views.decorators.cache import cache_page
 
 urlpatterns = [
-    path('', PostsListAll.as_view()),
-    path('one_by_one/', PostsList.as_view()),
+    path('', cache_page(60)(PostsListAll.as_view())),#кэширование на главную страницу (одну минуту)
+    path('one_by_one/', cache_page(300)(PostsList.as_view())),#Добавьте кэширование на страницы с новостями (по 5 минут на каждую)
     path('<int:pk>', PostDetail.as_view(), name='posts'),
     path('search/', PostView.as_view()),
     path('create/', PostCreateView.as_view(), name='create'),

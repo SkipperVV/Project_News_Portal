@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load cache %}
 
 <html lang="en">
 <head>
@@ -7,11 +8,16 @@
     <title>Posts</title>
 </head>
 <body>
-
+    
+{% cache 60 picture %}
 <p class="aligncenter">
-    <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
+    <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">  
 </p>
+<p align="center">the picture above is cashed for </p>
+<script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
+<p align="center">sec</p>
 
+{% endcache %}
 <b style="color:#ff0099; font-size:30px"> Новостной портал</b>
 <br>
 <h2>Нашего дорогого клиента: "{{user}}"</h2>
