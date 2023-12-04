@@ -9,6 +9,9 @@ from .models import Post
 from .templatetags.filter import PostFilter
 from .tasks import info_after_new_post
 
+from django.core.cache import cache
+from pprint import pprint
+
 
 class PostsListAll(ListView):
     model = Post
@@ -35,6 +38,14 @@ class PostView(ListView):
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['time_now'] = datetime.datetime.utcnow()
         return context
+    
+    def get_object(self, *args, **kwargs):
+        obj=cache.get(f'post - {self.kwargs["pk"]}',None)
+        if not obj:
+            obj=super().get_object(queryset=self.queryset)
+            cache.set(f'post - {self.kwargs["pk"]}',obj)
+            pprint(obj.pk, " Added to cash")
+        return obj
 
 
 class PostCreateView(PermissionRequiredMixin, CreateView):
@@ -72,7 +83,8 @@ class PostUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'create.html'
     form_class = PostForm
 
-    # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
+    # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, 
+    # который мы собираемся редактировать
     def get_object(self, **kwargs):
         id = self.kwargs.get('pk')
         return Post.objects.get(pk=id)

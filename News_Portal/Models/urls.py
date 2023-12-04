@@ -11,8 +11,9 @@ from django.urls import include
 from django.views.decorators.cache import cache_page
 
 urlpatterns = [
-    path('', cache_page(60)(PostsListAll.as_view())),#кэширование на главную страницу (одну минуту)
-    path('one_by_one/', cache_page(300)(PostsList.as_view())),#Добавьте кэширование на страницы с новостями (по 5 минут на каждую)
+    #path('', cache_page(60)(PostsListAll.as_view())),#кэширование главной страницы (одну минуту), как просили
+    path('', PostsListAll.as_view()),#Без кэширования, а то мешает держать в кэше не обновленные статьи 
+    path('one_by_one/', cache_page(300)(PostsList.as_view())),#кэширование на страницы с новостями (по 5 минут на каждую)
     path('<int:pk>', PostDetail.as_view(), name='posts'),
     path('search/', PostView.as_view()),
     path('create/', PostCreateView.as_view(), name='create'),

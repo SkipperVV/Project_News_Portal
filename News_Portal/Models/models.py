@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum, Max
 from django.db.models.functions import Coalesce  # Меняет None to 'пользовательское значение'
+from django.core.cache import cache
 
 article = 'AR'
 news = 'NW'
@@ -71,6 +72,10 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.author}: {self.title} , {self.rating}'
+    
+    def save(self,*args,**kwargs):
+        super().save(*args, **kwargs),
+        cache.delete(f'post - {self.pk}')
 
     @staticmethod  # Post.get_best_post()
     def get_best_post():  # Вывести дату добавления, имя автора, рейтинг, заголовок и превью лучшей статьи
