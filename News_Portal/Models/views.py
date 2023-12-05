@@ -9,10 +9,6 @@ from .models import Post
 from .templatetags.filter import PostFilter
 from .tasks import info_after_new_post
 
-from django.core.cache import cache
-from pprint import pprint
-
-
 class PostsListAll(ListView):
     model = Post
     ordering = '-post_time'
@@ -39,14 +35,6 @@ class PostView(ListView):
         context['time_now'] = datetime.datetime.utcnow()
         return context
     
-    def get_object(self, *args, **kwargs):
-        obj=cache.get(f'post - {self.kwargs["pk"]}',None)
-        if not obj:
-            obj=super().get_object(queryset=self.queryset)
-            cache.set(f'post - {self.kwargs["pk"]}',obj)
-            pprint(obj.pk, " Added to cash")
-        return obj
-
 
 class PostCreateView(PermissionRequiredMixin, CreateView):
     form_class = PostForm

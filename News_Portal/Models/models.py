@@ -75,6 +75,7 @@ class Post(models.Model):
     
     def save(self,*args,**kwargs):
         super().save(*args, **kwargs),
+        print("Статья автора", self.author, "с ID", self.pk, "удалена из cache")
         cache.delete(f'post - {self.pk}')
 
     @staticmethod  # Post.get_best_post()

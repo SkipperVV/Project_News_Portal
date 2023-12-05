@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from .models import Post
 from datetime import datetime
 from .templatetags.filter import PostFilter
+from django.core.cache import cache
 
 # from pprint import pprint
 class PostsList(ListView):
@@ -27,6 +28,15 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+
+    def get_object(self, *args, **kwargs):
+        obj=cache.get(f'post - {self.kwargs["pk"]}',None)
+        if not obj:
+            obj=super().get_object(queryset=self.queryset)
+            cache.set(f'post - {self.kwargs["pk"]}',obj)
+            author=self.request.user.author
+            print("Статья с ID", obj.pk, ", по запросу от", author, "добавлена в cash")
+        return obj    
 
 # class PostDetail(ListView):
 #     model = Post
