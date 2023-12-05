@@ -34,8 +34,9 @@ class PostDetail(DetailView):
         if not obj:
             obj=super().get_object(queryset=self.queryset)
             cache.set(f'post - {self.kwargs["pk"]}',obj)
-            author=self.request.user.author
-            print("Статья с ID", obj.pk, ", по запросу от", author, "добавлена в cash")
+            request_from = self.request.user.author
+            author= obj.author
+            print(f"Статья с ID {obj.pk} автора {author}, по запросу от пользователя {request_from} добавлена в cash")
         return obj    
 
 # class PostDetail(ListView):
