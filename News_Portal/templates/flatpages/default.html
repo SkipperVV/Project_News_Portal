@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    {% cache 60 picture %}
-    <p class="aligncenter">
-        <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">  
-    </p>
-    <!-- Закэшируем картинку для примера и поставим счетчик для наглядности-->
-    <p align="center">the picture above is cashed for </p>
-    <script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
-    <p align="center">sec</p>
+{% cache 60 picture %}
+<p class="aligncenter">
+    <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
+</p>
+<!-- Закэшируем картинку для примера и поставим счетчик для наглядности-->
+<p align="center">the picture above is cashed for </p>
+<script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
+<p align="center">sec</p>
 
 </body>
 {% endcache %}
@@ -28,8 +28,8 @@
 
 
 {% block content %}
-    <h1>Все новости</h1>
-    {{ posts }}
+<h1>Все новости</h1>
+{{ posts }}
 {% endblock content %}
 
 <br>

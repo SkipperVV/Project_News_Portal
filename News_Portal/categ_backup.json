@@ -1,0 +1,1 @@
+[{"model": "Models.category", "pk": 1, "fields": {"name": "Novel", "subscribers": [1, 6, 11, 17]}}, {"model": "Models.category", "pk": 2, "fields": {"name": "Story", "subscribers": [1, 11, 17, 18]}}, {"model": "Models.category", "pk": 3, "fields": {"name": "Drama", "subscribers": [6]}}, {"model": "Models.category", "pk": 4, "fields": {"name": "Article", "subscribers": [11]}}]

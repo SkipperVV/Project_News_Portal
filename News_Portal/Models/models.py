@@ -73,7 +73,7 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.author}: {self.title} , {self.rating}'
     
-    def save(self,*args,**kwargs):
+    def save(self,*args, **kwargs):
         super().save(*args, **kwargs),
         print("Статья автора", self.author, "с ID", self.pk, "удалена из cache")
         cache.delete(f'post - {self.pk}')

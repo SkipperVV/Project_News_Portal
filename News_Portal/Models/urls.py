@@ -1,14 +1,13 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+# cashe
+from django.views.decorators.cache import cache_page
 
 from .views import PostView, PostsListAll, PostCreateView, PostDeleteView, PostUpdateView
 from .views_old import PostsList, PostDetail
 from .view_categories import Categories_list_View, subscribe, unsubscribe
 
-from django.contrib import admin
-from django.urls import path
-from django.urls import include
-# cashe
-from django.views.decorators.cache import cache_page
+
 
 urlpatterns = [
     #path('', cache_page(60)(PostsListAll.as_view())),#кэширование главной страницы (одну минуту), как просили
