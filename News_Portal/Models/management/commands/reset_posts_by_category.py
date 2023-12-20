@@ -1,7 +1,9 @@
 from django.core.management.base import BaseCommand, CommandError, CommandParser
 from Models.models import Post, Category
 '''Напишите команду для manage.py, которая будет удалять все 
-новости из какой-либо категории, но только при подтверждении действия в консоли при выполнении команды.'''
+новости из какой-либо категории, но только при подтверждении действия в консоли при выполнении команды.
+в консоли:
+python manage.py reset_posts_by_category "имя_категории"'''
 
 class Command(BaseCommand):
     help = 'удаляет все новости из выбранной категории'
