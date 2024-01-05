@@ -8,6 +8,7 @@ from .models import Category, Post
 from .views import PostsListAll
 from django.contrib.auth.decorators import login_required
 
+
 class Categories_list_View(PostsListAll):
     model = Post
     template_name = 'categories_list.HTML'

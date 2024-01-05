@@ -9,6 +9,13 @@ from .models import Post
 from .templatetags.filter import PostFilter
 from .tasks import info_after_new_post
 
+import logging
+logging.debug('Debug')
+logging.info('Info')
+logging.warning('Warning')
+logging.error('Error')
+logging.critical('Critical')
+
 class PostsListAll(ListView):
     model = Post
     ordering = '-post_time'

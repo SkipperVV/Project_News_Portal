@@ -24,7 +24,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # ACCOUNT_EMAIL_VERIFICATION = 'mandatory' #Приветственное письмо вновьзарегистрировавшемуся товарищу
-ACCOUNT_EMAIL_VERIFICATION = "none" #- без проверки
+ACCOUNT_EMAIL_VERIFICATION = 'none' #- без проверки
 
 SITE_ID = 1
 
@@ -38,6 +38,8 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') #mail.ru пароль д�
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_USE_SSL =False
 EMAIL_USE_TLS =True
+
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#все уведомления будут приходить в консоль.
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'#Чтобы уведомления приходили на почту
@@ -57,7 +59,7 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 # формат даты, которую будет воспринимать наш задачник
-APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_DATETIME_FORMAT = 'N j, Y, f:s a'
 # если задача не выполняется за 25 секунд, то она автоматически снимается
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
 
@@ -68,15 +70,31 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+import logging
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'style' : '{', 
     'formatters': {
-        'simple': {
-            'format': '%(levelname)s %(message)s'
+        'DEBUG_log': {
+            #все сообщения уровня DEBUG и выше, включающие время, уровень сообщения, сообщения.
+            'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
         },
+
+        'WARNING_log': {
+            # сообщений WARNING и выше дополнительно должен выводиться путь к источнику события 
+            # (используется аргумент pathname в форматировании
+            'format': '%(asctime)s %(levelname)s %(module)s %(pathname)s %(message)s'
+
+        },
+        'ERROR_log': {
+            # для сообщений ERROR и CRITICAL еще должен выводить 
+            #стэк ошибки (аргумент exc_info)
+            'format': '%(asctime)s %(levelname)s %(module)s %(pathname)s %(message)s %(exc_info)s'
+        }
     },
+
     'filters': {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
@@ -84,29 +102,83 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
+            'formatter': 'DEBUG_log'
         },
+
+        'general_log_file': {
+            'level': 'WARNING',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'formatter': 'WARNING_log',
+            'filename' : 'logs.general.log', 
+        },
+
+        'errors_log_file': {
+            'level': 'ERROR',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'formatter': 'ERROR_log',
+            'filename' : 'logs.errors.log',
+        },
+
         'mail_admins': {
             'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
+            'class': 'django.utils.log.AdminEmailHandler',
+            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+            'formatter': 'ERROR_log',
+        },
+        'security': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+            'formatter': 'ERROR_log',
+        },
+        'security_log_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'formatter': 'ERROR_log',
+            'filename' : 'logs.security.log',
         }
     },
     'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'propagate': True,
+        'general_logger': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': True,
+        },
+        'debug_logger': {
+        'handlers': ['console', 'general_log_file'],
+        'level': 'DEBUG',
+        'propagate': True,
+        },
+        'warning_logger': {
+        'handlers': ['console', 'general_log_file' ],
+        'level': 'WARNING',
+        'propagate': True,
+        },
+        'error_logger': {
+        'handlers': ['console', 'mail_admins', 'errors_log_file'],
+        'level': 'ERROR',
+        'propagate': True,
+        },
+        'django.server': {
+        'handlers': ['console', 'mail_admins', 'errors_log_file'],
+        'level': 'ERROR',
+        'propagate': True,
         },
         'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': False,
-        }
+        'handlers': ['console', 'mail_admins', 'errors_log_file'],
+        'propagate': False,
+        },
+        'django.security.DisallowedHost': {
+        'handlers': ['console', 'mail_admins', 'security', 'security_log_file'],
+        'propagate': False,
+        },
     }
 }
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -157,7 +229,7 @@ ROOT_URLCONF = 'News_Portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -222,7 +294,7 @@ SITE_ID = 1
 STATIC_URL = 'static/'
 SITE_URL = 'http://127.0.0.1:8000'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, 'static')
 ]
 
 # Default primary key field type
