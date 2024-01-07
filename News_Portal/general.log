@@ -1,0 +1,12 @@
+2024-01-07 15:54:32,775 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/create HTTP/1.1" 301 0
+2024-01-07 15:54:32,879 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/create/ HTTP/1.1" 200 2232
+2024-01-07 15:54:53,813 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 200 8742
+2024-01-07 15:54:57,077 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/153 HTTP/1.1" 200 1957
+2024-01-07 15:55:14,668 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/create/ HTTP/1.1" 200 2232
+2024-01-07 15:57:12,893 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 200 8619
+2024-01-07 15:57:16,398 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/delete/159 HTTP/1.1" 200 1682
+2024-01-07 15:57:17,855 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "POST /news/delete/159 HTTP/1.1" 302 0
+2024-01-07 15:57:17,935 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 200 8742
+2024-01-07 15:57:41,297 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/5 HTTP/1.1" 200 1798
+2024-01-07 15:57:58,546 WARNING C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/0 HTTP/1.1" 404 2758
+2024-01-07 16:00:14,977 INFO C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py "GET /news/search/ HTTP/1.1" 200 11721

@@ -71,35 +71,46 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 import logging
+logger = logging.getLogger('django')
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'style' : '{', 
-    'formatters': {
-        'DEBUG_log': {
-            #все сообщения уровня DEBUG и выше, включающие время, уровень сообщения, сообщения.
-            'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
-        },
-
-        'WARNING_log': {
-            # сообщений WARNING и выше дополнительно должен выводиться путь к источнику события 
-            # (используется аргумент pathname в форматировании
-            'format': '%(asctime)s %(levelname)s %(module)s %(pathname)s %(message)s'
-
-        },
-        'ERROR_log': {
-            # для сообщений ERROR и CRITICAL еще должен выводить 
-            #стэк ошибки (аргумент exc_info)
-            'format': '%(asctime)s %(levelname)s %(module)s %(pathname)s %(message)s %(exc_info)s'
-        }
-    },
 
     'filters': {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
         },
     },
+    #-----formatters-------------------------------------------------
+    'formatters': {
+        'DEBUG_log': {
+            #все сообщения уровня DEBUG и выше, включающие время, уровень сообщения, сообщения.
+            'format': '%(asctime)s %(levelname)s %(message)s',
+            'encoding': 'utf-8',
+        },
+
+        'INFO_log': {
+            #все сообщения уровня DEBUG и дополнительно должен выводиться путь к источнику события.
+            'format': '%(asctime)s %(levelname)s %(pathname)s %(message)s',
+            'encoding': 'utf-8',
+        },
+
+        'WARNING_log': {
+            # сообщений WARNING и выше дополнительно должен выводиться путь к источнику события 
+            # (используется аргумент pathname в форматировании
+            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s',
+            'encoding': 'utf-8',
+        },
+        'ERROR_log': {
+            # для сообщений ERROR и CRITICAL еще должен выводить 
+            #стэк ошибки (аргумент exc_info)
+            'format': '%(asctime)s %(levelname)s %(pathname)s %(message)s %(exc_info)s',
+            'encoding': 'utf-8',
+        }
+    },
+    #----handlers--------------------------------------------------
     'handlers': {
         'console': {
             'level': 'DEBUG',
@@ -107,13 +118,19 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'DEBUG_log'
         },
-
-        'general_log_file': {
+        'console_warning': {
             'level': 'WARNING',
             'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'WARNING_log'
+        },        
+        #с указанием времени, уровня логирования, модуля, в котором возникло сообщение (аргумент module) и само сообщение
+        'general_log_file': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
             'class': 'logging.FileHandler',
-            'formatter': 'WARNING_log',
-            'filename' : 'logs.general.log', 
+            'formatter': 'INFO_log',
+            'filename' : 'general.log', 
         },
 
         'errors_log_file': {
@@ -121,7 +138,7 @@ LOGGING = {
             'filters': ['require_debug_true'],
             'class': 'logging.FileHandler',
             'formatter': 'ERROR_log',
-            'filename' : 'logs.errors.log',
+            'filename' : 'errors.log',
         },
 
         'mail_admins': {
@@ -140,42 +157,30 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'formatter': 'ERROR_log',
-            'filename' : 'logs.security.log',
+            'filename' : 'security.log',
         }
     },
+    #-----loggers-------------------------------------------------
     'loggers': {
-        'general_logger': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
-        'propagate': True,
-        },
-        'debug_logger': {
-        'handlers': ['console', 'general_log_file'],
-        'level': 'DEBUG',
-        'propagate': True,
-        },
-        'warning_logger': {
-        'handlers': ['console', 'general_log_file' ],
-        'level': 'WARNING',
-        'propagate': True,
-        },
-        'error_logger': {
-        'handlers': ['console', 'mail_admins', 'errors_log_file'],
-        'level': 'ERROR',
-        'propagate': True,
+        'django': {
+            'handlers': ['console', 'console_warning', 'security', 'general_log_file'],
+            'propagate': True,
         },
         'django.server': {
-        'handlers': ['console', 'mail_admins', 'errors_log_file'],
-        'level': 'ERROR',
-        'propagate': True,
+            'handlers': ['console', 'console_warning', 'mail_admins', 'errors_log_file'],
+            'propagate': True,
         },
         'django.request': {
-        'handlers': ['console', 'mail_admins', 'errors_log_file'],
-        'propagate': False,
+            'handlers': ['console', 'console_warning', 'mail_admins', 'errors_log_file'],
+            'propagate': False,
         },
-        'django.security.DisallowedHost': {
-        'handlers': ['console', 'mail_admins', 'security', 'security_log_file'],
-        'propagate': False,
+        'django.template': {
+            'handlers': ['console', 'console_warning', 'mail_admins', 'security', 'security_log_file'],
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['console', 'console_warning', 'mail_admins', 'security', 'security_log_file'],
+            'propagate': False,
         },
     }
 }
