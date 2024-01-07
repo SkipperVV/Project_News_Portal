@@ -87,27 +87,27 @@ LOGGING = {
     'formatters': {
         'DEBUG_log': {
             #все сообщения уровня DEBUG и выше, включающие время, уровень сообщения, сообщения.
-            'format': '%(asctime)s %(levelname)s %(message)s',
-            'encoding': 'utf-8',
+            'format': '%(asctime)s - %(levelname)s, Message: %(message)s',
+
         },
 
         'INFO_log': {
             #все сообщения уровня DEBUG и дополнительно должен выводиться путь к источнику события.
-            'format': '%(asctime)s %(levelname)s %(pathname)s %(message)s',
-            'encoding': 'utf-8',
+            'format': '%(asctime)s - %(levelname)s, Module: "%(module)s", Message: %(message)s',
+
         },
 
         'WARNING_log': {
             # сообщений WARNING и выше дополнительно должен выводиться путь к источнику события 
             # (используется аргумент pathname в форматировании
-            'format': '%(asctime)s %(levelname)s %(message)s %(pathname)s',
-            'encoding': 'utf-8',
+            'format': 'Path %(pathname)s',
+
         },
         'ERROR_log': {
             # для сообщений ERROR и CRITICAL еще должен выводить 
             #стэк ошибки (аргумент exc_info)
-            'format': '%(asctime)s %(levelname)s %(pathname)s %(message)s %(exc_info)s',
-            'encoding': 'utf-8',
+            'format': '%(asctime)s, %(levelname)s, %(pathname)s, %(message)s, %(exc_info)s',
+
         }
     },
     #----handlers--------------------------------------------------
@@ -123,7 +123,8 @@ LOGGING = {
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'WARNING_log'
-        },        
+        },
+     
         #с указанием времени, уровня логирования, модуля, в котором возникло сообщение (аргумент module) и само сообщение
         'general_log_file': {
             'level': 'INFO',
@@ -132,6 +133,13 @@ LOGGING = {
             'formatter': 'INFO_log',
             'filename' : 'general.log', 
         },
+        'warning_to_file': {
+            'level': 'WARNING',
+            'filters': ['require_debug_true'],
+            'class': 'logging.FileHandler',
+            'formatter': 'WARNING_log',
+            'filename' : 'general.log',                        
+        },           
 
         'errors_log_file': {
             'level': 'ERROR',
@@ -141,47 +149,52 @@ LOGGING = {
             'filename' : 'errors.log',
         },
 
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
-            'formatter': 'ERROR_log',
-        },
-        'security': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
-            'formatter': 'ERROR_log',
-        },
         'security_log_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'formatter': 'ERROR_log',
-            'filename' : 'security.log',
+            'filename' : 'security.log'
+        },
+
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+            'formatter': 'ERROR_log'
         }
     },
+    
     #-----loggers-------------------------------------------------
     'loggers': {
         'django': {
-            'handlers': ['console', 'console_warning', 'security', 'general_log_file'],
+            'handlers': ['console', 'console_warning', 'general_log_file', 'warning_to_file'],
             'propagate': True,
         },
-        'django.server': {
-            'handlers': ['console', 'console_warning', 'mail_admins', 'errors_log_file'],
-            'propagate': True,
-        },
-        'django.request': {
-            'handlers': ['console', 'console_warning', 'mail_admins', 'errors_log_file'],
-            'propagate': False,
-        },
+
         'django.template': {
-            'handlers': ['console', 'console_warning', 'mail_admins', 'security', 'security_log_file'],
+            'handlers': ['errors_log_file'],
             'propagate': False,
         },
+
         'django.db.backends': {
-            'handlers': ['console', 'console_warning', 'mail_admins', 'security', 'security_log_file'],
+            'handlers': ['errors_log_file'],
+            'propagate': False,
+        },  
+
+        'django.server': {
+            'handlers': ['mail_admins', 'errors_log_file'],
+            'propagate': True,
+        },
+        
+        'django.request': {
+            'handlers': ['mail_admins', 'errors_log_file'],
             'propagate': False,
         },
+
+        'django.security': {
+            'handlers': ['security_log_file'],#
+            'propagate': False,
+        }     
     }
 }
 # Application definition
