@@ -1,51 +1,17 @@
-2024-01-08 15:51:15,953 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:51:20,889 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:51:26,773 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:51:32,151 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:51:38,231 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 943
-2024-01-08 15:52:54,725 - WARNING, Module: "basehttp", Message: "GET /2 HTTP/1.1" 404 2551
-Path C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py
-2024-01-08 15:53:24,222 - INFO, Module: "basehttp", Message: "GET /sign/logout/ HTTP/1.1" 200 285
-2024-01-08 15:53:26,711 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
-2024-01-08 15:53:26,910 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
-2024-01-08 15:53:38,577 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 200 1710
-2024-01-08 15:54:15,680 - INFO, Module: "basehttp", Message: "GET /accounts/google/login/?process=login&next=%2F HTTP/1.1" 200 453
-2024-01-08 15:54:17,355 - INFO, Module: "basehttp", Message: "POST /accounts/google/login/?process=login&next=%2F HTTP/1.1" 302 0
-2024-01-08 15:54:22,169 - INFO, Module: "basehttp", Message: "GET /accounts/google/login/callback/?state=eyLwS6mt3hvX92PF&code=4%2F0AfJohXlETE2254UJpXpIqv5NvHSdC24CVx62BQ0_yjCsYnfHMnV834N1ILSWdIbSVDEPHQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 302 0
-2024-01-08 15:54:22,211 - INFO, Module: "basehttp", Message: "GET /accounts/social/signup/ HTTP/1.1" 200 801
-2024-01-08 15:54:25,968 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
-2024-01-08 15:54:33,831 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
-2024-01-08 15:54:39,736 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
-2024-01-08 15:55:16,180 - INFO, Module: "basehttp", Message: "GET /accounts/social/signup/ HTTP/1.1" 200 801
-2024-01-08 15:55:23,411 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 200 1710
-2024-01-08 15:55:29,118 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
-2024-01-08 15:55:29,135 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 978
-2024-01-08 15:56:24,244 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:56:29,592 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:56:36,136 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:56:40,046 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:56:46,757 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:56:52,217 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:57:05,694 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
-2024-01-08 15:57:10,025 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
-2024-01-08 15:57:19,143 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
-2024-01-08 15:57:19,359 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8751
-2024-01-08 15:57:20,126 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
-2024-01-08 17:04:58,117 - WARNING, Module: "basehttp", Message: "GET /news/0 HTTP/1.1" 404 2758
-Path C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py
-2024-01-08 17:04:58,251 - WARNING, Module: "basehttp", Message: "GET /news/0 HTTP/1.1" 404 2758
-Path C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py
-2024-01-08 17:10:33,260 - INFO, Module: "basehttp", Message: "GET /accounts/logout/ HTTP/1.1" 200 443
-2024-01-08 17:10:34,759 - INFO, Module: "basehttp", Message: "POST /accounts/logout/ HTTP/1.1" 302 0
-2024-01-08 17:10:34,767 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
-2024-01-08 17:10:35,015 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
-2024-01-08 17:10:36,683 - INFO, Module: "basehttp", Message: "GET /accounts/signup/?next=%2F HTTP/1.1" 200 1194
-2024-01-08 17:10:55,908 - INFO, Module: "basehttp", Message: "POST /accounts/signup/ HTTP/1.1" 200 1293
-2024-01-08 17:11:45,086 - INFO, Module: "basehttp", Message: "POST /accounts/signup/ HTTP/1.1" 302 0
-2024-01-08 17:11:45,125 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 936
-2024-01-08 17:12:24,803 - INFO, Module: "basehttp", Message: "GET /sign/logout/ HTTP/1.1" 200 285
-2024-01-08 17:12:26,203 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
-2024-01-08 17:12:26,228 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
-2024-01-08 17:12:29,227 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
-2024-01-08 17:12:29,250 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 978
-2024-01-08 17:18:48,512 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-08 18:01:10,912 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 11730
+2024-01-08 18:01:25,462 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8751
+2024-01-08 18:01:27,081 - WARNING, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 403 135
+2024-01-08 18:01:45,502 - INFO, Module: "basehttp", Message: "GET /accounts/logout/ HTTP/1.1" 200 443
+2024-01-08 18:01:47,192 - INFO, Module: "basehttp", Message: "POST /accounts/logout/ HTTP/1.1" 302 0
+2024-01-08 18:01:47,204 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
+2024-01-08 18:01:47,779 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-08 18:01:50,699 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
+2024-01-08 18:01:50,768 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 978
+2024-01-08 18:01:52,199 - INFO, Module: "basehttp", Message: "GET /sign/upgrade/ HTTP/1.1" 302 0
+2024-01-08 18:01:52,264 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 980
+2024-01-08 18:01:55,265 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-08 18:01:55,403 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8751
+2024-01-08 18:01:57,194 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-08 18:01:57,279 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-08 18:04:12,230 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8668
+2024-01-08 18:04:25,139 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 1755
