@@ -48,3 +48,4 @@ Path C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.
 2024-01-08 17:12:26,228 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
 2024-01-08 17:12:29,227 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
 2024-01-08 17:12:29,250 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 978
+2024-01-08 17:18:48,512 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.

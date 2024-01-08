@@ -83,10 +83,14 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "style": "{",
+    # -----filters-------------------------------------------------    
     "filters": {
         "require_debug_true": {
             "()": "django.utils.log.RequireDebugTrue",
         },
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        }        
     },
     # -----formatters-------------------------------------------------
     "formatters": {
@@ -133,14 +137,13 @@ LOGGING = {
         },
         "warning_to_file": {
             "level": "WARNING",
-            "filters": ["require_debug_true"],
+            "filters": ["require_debug_false"],
             "class": "logging.FileHandler",
             "formatter": "WARNING_log",
             "filename": "general.log",
         },
         "errors_log_file": {
             "level": "ERROR", #"INFO", for test
-            "filters": ["require_debug_true"],
             "class": "logging.FileHandler",
             "formatter": "ERROR_log",
             "filename": "errors.log",
@@ -153,6 +156,7 @@ LOGGING = {
         },
         "mail_admins": {
             "level": "ERROR",
+            "filters": ["require_debug_false"],            
             "class": "django.utils.log.AdminEmailHandler",
             "email_backend": "django.core.mail.backends.filebased.EmailBackend",
             "formatter": "ERROR_log",
@@ -186,7 +190,7 @@ LOGGING = {
             "propagate": False,
         },
         "django.security": {
-            "handlers": ["security_log_file"],
+            "handlers": ["security_log_file"],  
             "propagate": False,
         },
     },
