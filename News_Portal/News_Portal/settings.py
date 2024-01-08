@@ -32,7 +32,6 @@ SITE_ID = 1
 
 ACCOUNT_FORMS = {"signup": "sign.models.BasicSignupForm"}
 
-
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
@@ -42,6 +41,8 @@ EMAIL_HOST_PASSWORD = os.getenv(
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
+
+ADMINS = {'admin', 'skippervasin@gmail.com'}
 
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
@@ -138,7 +139,7 @@ LOGGING = {
             "filename": "general.log",
         },
         "errors_log_file": {
-            "level": "ERROR",
+            "level": "ERROR", #"INFO", for test
             "filters": ["require_debug_true"],
             "class": "logging.FileHandler",
             "formatter": "ERROR_log",
@@ -185,7 +186,7 @@ LOGGING = {
             "propagate": False,
         },
         "django.security": {
-            "handlers": ["security_log_file"],  #
+            "handlers": ["security_log_file"],
             "propagate": False,
         },
     },

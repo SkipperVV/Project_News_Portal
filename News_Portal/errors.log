@@ -1,0 +1,18 @@
+2024-01-08 15:51:38,231, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET / HTTP/1.1" 200 943, None
+2024-01-08 15:52:54,724, WARNING, C:\Project_News_Portal\venv\Lib\site-packages\django\utils\log.py, Not Found: /2, None
+2024-01-08 15:52:54,725, WARNING, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /2 HTTP/1.1" 404 2551, None
+2024-01-08 15:53:24,222, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /sign/logout/ HTTP/1.1" 200 285, None
+2024-01-08 15:53:26,711, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET / HTTP/1.1" 302 0, None
+2024-01-08 15:53:26,910, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /accounts/login/?next=/ HTTP/1.1" 200 1567, None
+2024-01-08 15:53:38,577, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/login/ HTTP/1.1" 200 1710, None
+2024-01-08 15:54:15,680, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /accounts/google/login/?process=login&next=%2F HTTP/1.1" 200 453, None
+2024-01-08 15:54:17,355, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/google/login/?process=login&next=%2F HTTP/1.1" 302 0, None
+2024-01-08 15:54:22,169, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /accounts/google/login/callback/?state=eyLwS6mt3hvX92PF&code=4%2F0AfJohXlETE2254UJpXpIqv5NvHSdC24CVx62BQ0_yjCsYnfHMnV834N1ILSWdIbSVDEPHQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent HTTP/1.1" 302 0, None
+2024-01-08 15:54:22,211, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /accounts/social/signup/ HTTP/1.1" 200 801, None
+2024-01-08 15:54:25,968, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/social/signup/ HTTP/1.1" 200 962, None
+2024-01-08 15:54:33,831, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/social/signup/ HTTP/1.1" 200 962, None
+2024-01-08 15:54:39,736, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/social/signup/ HTTP/1.1" 200 962, None
+2024-01-08 15:55:16,180, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /accounts/social/signup/ HTTP/1.1" 200 801, None
+2024-01-08 15:55:23,411, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/login/ HTTP/1.1" 200 1710, None
+2024-01-08 15:55:29,118, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "POST /accounts/login/ HTTP/1.1" 302 0, None
+2024-01-08 15:55:29,135, INFO, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET / HTTP/1.1" 200 978, None
