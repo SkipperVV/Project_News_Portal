@@ -15,3 +15,43 @@
 2024-01-08 18:01:57,279 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
 2024-01-08 18:04:12,230 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8668
 2024-01-08 18:04:25,139 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 1755
+2024-01-08 18:06:05,909 - INFO, Module: "basehttp", Message: - Broken pipe from ('127.0.0.1', 14467)
+2024-01-10 12:06:20,200 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 12:06:29,915 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 980
+2024-01-10 12:06:33,953 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:06:34,440 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-10 12:06:39,100 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8668
+2024-01-10 12:06:45,800 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:07:04,526 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:07:27,638 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 302 0
+2024-01-10 12:07:27,800 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/news/create/ HTTP/1.1" 200 1611
+2024-01-10 12:07:30,696 - WARNING, Module: "basehttp", Message: "GET /favicon.ico HTTP/1.1" 404 2581
+2024-01-10 12:07:56,728 - INFO, Module: "basehttp", Message: "GET /accounts/google/login/?process=login&next=%2Fnews%2Fcreate%2F HTTP/1.1" 200 453
+2024-01-10 12:07:58,858 - INFO, Module: "basehttp", Message: "POST /accounts/google/login/?process=login&next=%2Fnews%2Fcreate%2F HTTP/1.1" 302 0
+2024-01-10 12:08:01,649 - INFO, Module: "basehttp", Message: "GET /accounts/google/login/callback/?state=WMK9gVCUpnZ4BsCK&code=4%2F0AfJohXmRZvzSudLE5fESVEHKY0w8treI3pJc363iGdI68-apVjVb0wUYnCOep9lNIcMqHQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent HTTP/1.1" 302 0
+2024-01-10 12:08:01,696 - INFO, Module: "basehttp", Message: "GET /accounts/social/signup/ HTTP/1.1" 200 801
+2024-01-10 12:08:03,634 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
+2024-01-10 12:08:06,766 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
+2024-01-10 12:08:10,557 - INFO, Module: "basehttp", Message: "POST /accounts/social/signup/ HTTP/1.1" 200 962
+2024-01-10 12:08:14,004 - INFO, Module: "basehttp", Message: "GET /accounts/social/signup/ HTTP/1.1" 200 801
+2024-01-10 12:08:15,819 - INFO, Module: "basehttp", Message: "GET /accounts/google/login/callback/?state=WMK9gVCUpnZ4BsCK&code=4%2F0AfJohXnrzO15EheXf1j-CC-o_i6bjeOZIrIC6wp6IKouIsBm70BYTgar17TxGRfChxgJNw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none HTTP/1.1" 200 297
+2024-01-10 12:08:42,016 - INFO, Module: "basehttp", Message: - Broken pipe from ('127.0.0.1', 34769)
+2024-01-10 12:09:22,221 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
+2024-01-10 12:09:22,256 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-10 12:09:54,201 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
+2024-01-10 12:09:54,219 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 962
+2024-01-10 12:09:59,471 - ERROR, Module: "basehttp", Message: "GET /sign/upgrade/ HTTP/1.1" 500 170810
+2024-01-10 12:11:39,051 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 980
+2024-01-10 12:11:45,926 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:11:51,086 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8555
+2024-01-10 12:11:54,312 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:12:53,022 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:12:55,324 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8423
+2024-01-10 12:12:57,738 - INFO, Module: "basehttp", Message: "GET /news/delete/161 HTTP/1.1" 200 1680
+2024-01-10 12:12:59,424 - INFO, Module: "basehttp", Message: "POST /news/delete/161 HTTP/1.1" 302 0
+2024-01-10 12:12:59,512 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8556
+2024-01-10 12:13:02,854 - INFO, Module: "basehttp", Message: "GET /news/delete/162 HTTP/1.1" 200 1681
+2024-01-10 12:13:04,118 - INFO, Module: "basehttp", Message: "POST /news/delete/162 HTTP/1.1" 302 0
+2024-01-10 12:13:04,208 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8668
+2024-01-10 12:13:15,281 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 12:13:50,627 - INFO, Module: "basehttp", Message: - Broken pipe from ('127.0.0.1', 34768)

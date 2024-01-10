@@ -1,0 +1,471 @@
+2024-01-08 18:06:05,869, ERROR, C:\Project_News_Portal\venv\Lib\site-packages\django\utils\log.py, Internal Server Error: /news/create/, (<class 'kombu.exceptions.OperationalError'>, OperationalError('Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.'), <traceback object at 0x000001CEE1508640>)
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 916, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 749, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 798, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 373, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\commands\core.py", line 2015, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\News_Portal\Models\views.py", line 58, in form_valid
+    info_after_new_post.delay(form.instance.pk)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 594, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 796, in send_task
+    with P.connection._reraise_as_library_errors():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+2024-01-10 12:08:41,974, ERROR, C:\Project_News_Portal\venv\Lib\site-packages\django\utils\log.py, Internal Server Error: /news/create/, (<class 'kombu.exceptions.OperationalError'>, OperationalError('Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.'), <traceback object at 0x000001C6CD0D09C0>)
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 916, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 749, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 798, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 373, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\commands\core.py", line 2015, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\News_Portal\Models\views.py", line 58, in form_valid
+    info_after_new_post.delay(form.instance.pk)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 594, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 796, in send_task
+    with P.connection._reraise_as_library_errors():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+2024-01-10 12:09:59,443, ERROR, C:\Project_News_Portal\venv\Lib\site-packages\django\utils\log.py, Internal Server Error: /sign/upgrade/, (<class 'django.db.utils.IntegrityError'>, IntegrityError('UNIQUE constraint failed: Models_author.user_id'), <traceback object at 0x000001C6CD86E1C0>)
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: Models_author.user_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\News_Portal\sign\views.py", line 21, in upgrade_me
+    Author.objects.create(user=user)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: Models_author.user_id
+2024-01-10 12:09:59,471, ERROR, C:\Project_News_Portal\venv\Lib\site-packages\django\core\servers\basehttp.py, "GET /sign/upgrade/ HTTP/1.1" 500 170810, None
+2024-01-10 12:13:50,617, ERROR, C:\Project_News_Portal\venv\Lib\site-packages\django\utils\log.py, Internal Server Error: /news/create/, (<class 'kombu.exceptions.OperationalError'>, OperationalError('Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.'), <traceback object at 0x000001C6CD91D140>)
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 916, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 749, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 798, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 373, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\commands\core.py", line 2015, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Project_News_Portal\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\News_Portal\Models\views.py", line 58, in form_valid
+    info_after_new_post.delay(form.instance.pk)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\task.py", line 594, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "C:\Project_News_Portal\venv\Lib\site-packages\celery\app\base.py", line 796, in send_task
+    with P.connection._reraise_as_library_errors():
+  File "C:\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Project_News_Portal\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
