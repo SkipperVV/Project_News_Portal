@@ -6,6 +6,10 @@ load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LOGIN_URL = "/accounts/login/"
+LOGIN_REDIRECT_URL = "/"
+ROOT_URLCONF = "News_Portal.urls"
 
 CACHES = {
     "default": {
@@ -17,9 +21,6 @@ CACHES = {
         "TIMEOUT": 30,
     }
 }
-
-LOGIN_URL = "/accounts/login/"
-LOGIN_REDIRECT_URL = "/"
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
@@ -228,13 +229,11 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    'django.middleware.locale.LocaleMiddleware', # Для пакета gettext 0.21
     # Cashing of the Full site:
     # 'django.middleware.cache.UpdateCacheMiddleware',
-    # 'django.middleware.common.CommonMiddleware',
     # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]
-
-ROOT_URLCONF = "News_Portal.urls"
 
 TEMPLATES = [
     {
@@ -288,14 +287,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
-
+#LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = 'ru'
 USE_I18N = True
-
+TIME_ZONE = "UTC"
 USE_TZ = False
-
 SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

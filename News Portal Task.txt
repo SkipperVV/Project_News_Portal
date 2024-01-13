@@ -447,4 +447,77 @@ admin.py
 6. Более того, при помощи фильтров нужно указать, что в консоль сообщения отправляются только при 
     DEBUG = True, а на почту и в файл general.log — только при DEBUG = False.
 
+************************локализация************************************************
+Во-первых, локализация, как не сложно догадаться, — это язык конечного пользователя. 
+Во-вторых, локализация — это время.
+файл settings.py, в нём обязательно должна быть данная строчка:
+
+USE_I18N = True
+И
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+И
+MIDDLEWARE = [
+    ....
+    'django.middleware.locale.LocaleMiddleware',
+    ....
+]
+
+Установить пакет gettext
+https://mlocati.github.io/articles/gettext-iconv-windows.html
+gettext0.21-iconv1.16-shared-64.exe
+gettext0.21-iconv1.16-static-64.exe
+всё по умолчанию
+
+Создаем папку "locale" в проекте там, где C:\Project_News_Portal\News_Portal\manage.py
+C:\Project_News_Portal\News_Portal\locale
+
+Например, в models.py
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy # импортируем «ленивый» геттекст с подсказкой
+например
+class Author(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, help_text=_("Выбор автора"))
+    rating = models.IntegerField(default=0)
+    ....
+
+help_text — это подсказка, которая отображается в админке при создании нового объекта.
+
+Для того чтобы создать файл перевода на какой-либо язык, надо ввести следующую команду в терминале в папке с manage.py файлом:
+python manage.py makemessages -l <код языка*> напр. ru, en
+
+В файле django.po вставляем переводы:
+
+...
+#: .\Models\models.py:57
+msgid "Введите название новой категории"
+msgstr "Enter the name of the new category"
+
+#: .\Models\models.py:65
+msgid "Введите название"
+msgstr "Enter the name"
+
+Скомпилируем перевод. Для чего нам надо выполнить следующую команду:
+python manage.py compilemessages
+Теперь у нас появился в той же директории, что и django.po, новый файл — django.mo. 
+Если так оно и произошло, и никакой ошибки не было, то всё должно работать.
+
+Теперь давайте в настройках поставим русский язык и попробуем перезапустить страницу.
+
+settings.py
+LANGUAGE_CODE = 'ru'
+
+Теперь в строке браузера мы должны увидеть:
+"Привет мир"
+
+
+********Задание**********************************************************************************
+Дополните ваш новостной портал:
+
+Добавьте ко всему статичному тексту в вашем приложением обёртку в функцию gettext().
+Сделайте файл перевода, запишите туда перевод всех текстов (можете воспользоваться Google-переводчиком).
+Скомпилируйте файл перевода.
+Добавьте переключение языка в шапке сайта.
+******************************************************************************************
+
+
 

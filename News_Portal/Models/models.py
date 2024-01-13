@@ -4,13 +4,16 @@ from django.db.models import Sum, Max
 from django.db.models.functions import Coalesce  # Меняет None to 'пользовательское значение'
 from django.core.cache import cache
 
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy # импортируем «ленивый» геттекст с подсказкой
+
 article = 'AR'
 news = 'NW'
 POSITION = [(article, 'Статья'), (news, 'Новость'), ]
 
 
 class Author(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, help_text=_("Выбор автора"))
     rating = models.IntegerField(default=0)
 
     def update_rating(self):
@@ -51,7 +54,7 @@ class Author(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=50, unique=True, help_text=_("Введите название новой категории"))
     subscribers = models.ManyToManyField(User, related_name='categories')#для обращения через user.categories.all
     def __str__(self):
         return f'{self.name}'
@@ -59,11 +62,11 @@ class Category(models.Model):
 
 class Post(models.Model):
     post_time = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, help_text=_("Введите название"))
     text = models.TextField()
     post_type = models.CharField(max_length=2, choices=POSITION, default=article)
     rating = models.IntegerField(default=0)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, help_text=_("Выбор автора"))
     category = models.ManyToManyField(Category, through='PostCategory')
 
 

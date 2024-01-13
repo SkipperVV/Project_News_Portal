@@ -1,14 +1,17 @@
 import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, View
 
 from .forms import PostForm
 from .models import Post
 from .templatetags.filter import PostFilter
 from .tasks import info_after_new_post
 
+from django.utils.translation import gettext as _ # импортируем функцию для перевода
+ 
 class PostsListAll(ListView):
     model = Post
     ordering = '-post_time'

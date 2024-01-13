@@ -55,3 +55,165 @@
 2024-01-10 12:13:04,208 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8668
 2024-01-10 12:13:15,281 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
 2024-01-10 12:13:50,627 - INFO, Module: "basehttp", Message: - Broken pipe from ('127.0.0.1', 34768)
+2024-01-10 12:15:12,849 - ERROR, Module: "basehttp", Message: "POST /news/create/ HTTP/1.1" 500 290396
+2024-01-10 12:31:15,529 - INFO, Module: "basehttp", Message: "GET /sign/upgrade/ HTTP/1.1" 302 0
+2024-01-10 12:31:15,834 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/sign/upgrade/ HTTP/1.1" 200 1614
+2024-01-10 12:31:16,887 - WARNING, Module: "basehttp", Message: "GET /favicon.ico HTTP/1.1" 404 2581
+2024-01-10 12:39:08,084 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-10 12:39:13,706 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 12:54:54,443 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-10 12:54:58,042 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 12:55:21,279 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-10 12:55:25,579 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 12:55:31,208 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-10 12:55:34,820 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 13:42:55,928 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-10 13:43:01,240 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 14:57:35,834 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-10 14:57:45,549 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 980
+2024-01-10 14:57:46,220 - WARNING, Module: "basehttp", Message: "GET /favicon.ico HTTP/1.1" 404 2581
+2024-01-10 14:57:51,207 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-10 14:57:51,364 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 14:57:52,011 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-10 14:57:55,955 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-10 14:57:56,126 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8623
+2024-01-10 14:57:59,615 - INFO, Module: "basehttp", Message: "GET /news/delete/163 HTTP/1.1" 200 1682
+2024-01-10 14:58:01,186 - INFO, Module: "basehttp", Message: "POST /news/delete/163 HTTP/1.1" 302 0
+2024-01-10 14:58:01,290 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8741
+2024-01-10 14:58:03,204 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 2250
+2024-01-10 14:58:14,477 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8626
+2024-01-10 14:58:18,923 - INFO, Module: "basehttp", Message: "GET /news/delete/164 HTTP/1.1" 200 1685
+2024-01-10 14:58:20,516 - INFO, Module: "basehttp", Message: "POST /news/delete/164 HTTP/1.1" 302 0
+2024-01-10 14:58:20,628 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 8741
+2024-01-13 13:25:29,528 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:25:33,129 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 980
+2024-01-13 13:25:33,825 - WARNING, Module: "basehttp", Message: "GET /favicon.ico HTTP/1.1" 404 2581
+2024-01-13 13:26:01,760 - WARNING, Module: "basehttp", Message: "GET /index HTTP/1.1" 404 2563
+2024-01-13 13:36:15,557 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:36:20,205 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:36:42,781 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:36:47,865 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:36:56,328 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:37:02,365 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:37:09,273 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:37:14,926 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:38:24,851 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:38:28,292 - INFO, Module: "basehttp", Message: "GET /admin/ HTTP/1.1" 302 0
+2024-01-13 13:38:28,609 - INFO, Module: "basehttp", Message: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4944
+2024-01-13 13:38:29,628 - INFO, Module: "basehttp", Message: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+2024-01-13 13:38:29,716 - INFO, Module: "basehttp", Message: "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+2024-01-13 13:38:29,835 - INFO, Module: "basehttp", Message: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+2024-01-13 13:38:29,928 - INFO, Module: "basehttp", Message: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2024-01-13 13:38:29,978 - INFO, Module: "basehttp", Message: "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+2024-01-13 13:38:30,015 - INFO, Module: "basehttp", Message: "GET /static/admin/css/login.css HTTP/1.1" 200 958
+2024-01-13 13:38:30,052 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+2024-01-13 13:38:30,236 - INFO, Module: "basehttp", Message: "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+2024-01-13 13:38:46,153 - INFO, Module: "basehttp", Message: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2024-01-13 13:38:46,253 - INFO, Module: "basehttp", Message: "GET /admin/ HTTP/1.1" 200 17169
+2024-01-13 13:38:46,321 - INFO, Module: "basehttp", Message: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2024-01-13 13:38:46,430 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+2024-01-13 13:38:46,439 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+2024-01-13 13:38:52,028 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/ HTTP/1.1" 200 15160
+2024-01-13 13:38:52,084 - INFO, Module: "basehttp", Message: "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+2024-01-13 13:38:52,099 - INFO, Module: "basehttp", Message: "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+2024-01-13 13:38:52,100 - INFO, Module: "basehttp", Message: "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+2024-01-13 13:38:52,108 - INFO, Module: "basehttp", Message: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+2024-01-13 13:38:52,114 - INFO, Module: "basehttp", Message: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+2024-01-13 13:38:52,127 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:38:52,215 - INFO, Module: "basehttp", Message: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+2024-01-13 13:38:52,221 - INFO, Module: "basehttp", Message: "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2024-01-13 13:38:52,229 - INFO, Module: "basehttp", Message: "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+2024-01-13 13:38:52,231 - INFO, Module: "basehttp", Message: "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+2024-01-13 13:38:52,308 - INFO, Module: "basehttp", Message: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2024-01-13 13:38:52,347 - INFO, Module: "basehttp", Message: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+2024-01-13 13:38:56,212 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/add/ HTTP/1.1" 200 16311
+2024-01-13 13:38:56,313 - INFO, Module: "basehttp", Message: "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+2024-01-13 13:38:56,362 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:38:56,365 - INFO, Module: "basehttp", Message: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+2024-01-13 13:38:56,433 - INFO, Module: "basehttp", Message: "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+2024-01-13 13:38:56,437 - INFO, Module: "basehttp", Message: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+2024-01-13 13:39:08,111 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/ HTTP/1.1" 200 15160
+2024-01-13 13:39:08,203 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:39:20,591 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:39:27,266 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:39:33,681 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:39:37,624 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:39:39,215 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/add/ HTTP/1.1" 200 16337
+2024-01-13 13:39:39,320 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:39:45,598 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/ HTTP/1.1" 200 17019
+2024-01-13 13:39:45,662 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:39:50,887 - INFO, Module: "basehttp", Message: "GET /admin/Models/comment/ HTTP/1.1" 200 15188
+2024-01-13 13:39:50,975 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:39:58,991 - INFO, Module: "basehttp", Message: "GET /admin/Models/comment/add/ HTTP/1.1" 200 20931
+2024-01-13 13:39:59,120 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:39:59,596 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+2024-01-13 13:40:04,202 - INFO, Module: "basehttp", Message: "GET /admin/Models/postcategory/ HTTP/1.1" 200 20525
+2024-01-13 13:40:04,284 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:40:06,729 - INFO, Module: "basehttp", Message: "GET /admin/Models/postcategory/add/ HTTP/1.1" 200 19233
+2024-01-13 13:40:06,804 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:41:38,171 - INFO, Module: "basehttp", Message: "GET /admin/Models/comment/ HTTP/1.1" 200 15188
+2024-01-13 13:41:38,251 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:41:49,992 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/ HTTP/1.1" 200 17019
+2024-01-13 13:41:50,071 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:41:52,539 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/ HTTP/1.1" 200 15160
+2024-01-13 13:41:52,592 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:41:54,449 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/ HTTP/1.1" 200 17019
+2024-01-13 13:41:54,527 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:41:56,398 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16530
+2024-01-13 13:41:56,488 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:42:20,396 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:42:25,264 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:42:36,079 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:42:40,855 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:42:47,943 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:42:52,773 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:42:54,448 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16734
+2024-01-13 13:42:54,589 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:43:10,747 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/ HTTP/1.1" 200 17019
+2024-01-13 13:43:10,902 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:43:15,358 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16734
+2024-01-13 13:43:15,436 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:43:46,724 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:43:50,076 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:43:57,326 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16706
+2024-01-13 13:43:57,407 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:01,200 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16706
+2024-01-13 13:44:01,267 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:09,576 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16706
+2024-01-13 13:44:09,641 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:17,498 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:44:22,838 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:44:24,131 - INFO, Module: "basehttp", Message: "GET /admin/Models/author/add/ HTTP/1.1" 200 16710
+2024-01-13 13:44:24,201 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:31,745 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/ HTTP/1.1" 200 15160
+2024-01-13 13:44:31,811 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:34,002 - INFO, Module: "basehttp", Message: "GET /admin/Models/category/add/ HTTP/1.1" 200 16337
+2024-01-13 13:44:34,079 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:43,072 - INFO, Module: "basehttp", Message: "GET /admin/Models/comment/ HTTP/1.1" 200 15188
+2024-01-13 13:44:43,128 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:46,592 - INFO, Module: "basehttp", Message: "GET /admin/Models/comment/add/ HTTP/1.1" 200 20931
+2024-01-13 13:44:46,663 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:54,348 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 26684
+2024-01-13 13:44:54,422 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:44:56,333 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/add/ HTTP/1.1" 200 18306
+2024-01-13 13:44:56,404 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:45:31,816 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:45:37,887 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:45:44,291 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:45:56,593 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:46:02,341 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/add/ HTTP/1.1" 200 18495
+2024-01-13 13:46:04,204 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:46:26,620 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\models.py changed, reloading.
+2024-01-13 13:46:31,401 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-13 13:46:33,746 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/add/ HTTP/1.1" 200 18677
+2024-01-13 13:46:33,838 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:46:45,161 - INFO, Module: "basehttp", Message: "GET /admin/auth/group/ HTTP/1.1" 200 15099
+2024-01-13 13:46:45,241 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:46:45,767 - INFO, Module: "basehttp", Message: "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+2024-01-13 13:46:57,812 - INFO, Module: "basehttp", Message: "GET /admin/auth/group/add/ HTTP/1.1" 200 22490
+2024-01-13 13:46:57,904 - INFO, Module: "basehttp", Message: "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+2024-01-13 13:46:57,908 - INFO, Module: "basehttp", Message: "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+2024-01-13 13:46:57,963 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-13 13:46:58,131 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+2024-01-13 13:46:58,160 - INFO, Module: "basehttp", Message: "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+2024-01-13 13:46:58,176 - INFO, Module: "basehttp", Message: "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
