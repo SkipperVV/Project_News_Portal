@@ -289,6 +289,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = 'ru'
+LANGUAGES = [
+    ('ru','Русский'),
+    ('en-us', 'English')
+    ]
 USE_I18N = True
 TIME_ZONE = "UTC"
 USE_TZ = False

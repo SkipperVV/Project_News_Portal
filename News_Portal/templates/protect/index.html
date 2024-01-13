@@ -1,40 +1,56 @@
 {% extends "main.html" %}
+{% load i18n %} 
+
+<form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+    <input type="hidden" name="next" value="{{ redirect_to }}">
+    
+    <select name="language" id="">
+        {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+        {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+
+        {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                {{ language.name_local }} - {{ language.code }}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="set">
 
 
 {% block content %}
-<h1>Страница авторизованного пользователя "{{user}}"</h1>
-<h2> Личные данные пользователя: </h2>
+<h1>{{ string }} {% trans "Страница авторизованного пользователя " %} "{{user}}"</h1>
+<h2> {{ string }} {% trans "Личные данные пользователя: " %} </h2>
 <h3> E-mail: {{user.email}} </h3>
 <br>
 {% if not is_author %}
-<button> <a href="sign/upgrade/"> Я регистрируюсь как Автор!</a> </button>
+<button> <a href="sign/upgrade/"> {{ string }} {% trans "Я регистрируюсь как Автор!" %}</a> </button>
 <br>
 {%else%}
-<a> Пользователь "{{ user }}" зарегестрирован как "Автор"</a>
+<a> {{ string }} {% trans "Пользователь " %} "{{ user }}" {{ string }} {% trans "зарегестрирован как 'Автор' " %}</a>
 {% endif %}
 <br>
 {% if not is_common %}
-<button> <a href="sign/addcommon/"> Добавить общую регистрацию</a> </button>
+<button> <a href="sign/addcommon/"> {{ string }} {% trans "Добавить общую регистрацию " %} </a> </button>
 {%else%}
 <br>
-<a> Пользователь "{{ user }}" имеет общую регистрацию</a>
+<a> {{ string }} {% trans "Пользователь " %} "{{ user }}" {{ string }} {% trans "имеет общую регистрацию" %}</a>
 {% endif %}
 <br>
 </h2>
 <br>
 
-<button> <a href="sign/logout/">Выйти</a> </button>
+<button> <a href="sign/logout/">{{ string }} {% trans "Выйти" %}</a> </button>
 
 <h3>
-    <a href="news/search/">Найти публикацию &#128073; </a>
+    <a href="news/search/">{{ string }} {% trans "Найти публикацию" %} &#128073; </a>
     {% if posts|length > 1 %}
     <br>
-    <a href="news/one_by_one/"> Постраничный вывод статей &#128073;</a>
+    <a href="news/one_by_one/"> {{ string }} {% trans "Постраничный вывод статей" %} &#128073;</a>
     {% else %}
     <br>
-    <a href="/news">На главную &#128073;</a>
+    <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a>
     {% endif %}
     <br>
-    <a href="news/create">Добавить пост &#128073;</a>
+    <a href="news/create">{{ string }} {% trans "Добавить пост" %} &#128073;</a>
 </h3>
 {% endblock %}

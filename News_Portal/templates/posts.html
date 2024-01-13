@@ -1,28 +1,32 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %} 
 <b style="color:#ff0099; font-size:30px"> Page "Posts"</b>
 <!--{% load censor_filter %}-->
 
 {% block title %} Posts {% endblock title %}
 
 {% block content %}
-<h2>Главная страница</h2>
+<h2>{{ string }} {% trans "Главная страница" %}</h2><h1>page- Posts.html</h1> 
 <h3>
-    <a href="/news/search/">Найти публикацию &#128073; </a>
+    <a href="search/">{{ string }} {% trans "Найти публикацию" %} &#128073; </a>
     {% if posts|length > 1 %}
     <br>
-    <a href="/news/one_by_one/"> Постраничный вывод статей &#128073;</a>
+    <a href="one_by_one/"> {{ string }} {% trans "Постраничный вывод статей" %} &#128073;</a>
     {% else %}
     <br>
-    <a href="/news">На главную &#128073;</a>
+    <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a>
     {% endif %}
     <br>
-    <a href="/news/create">Добавить пост &#128073;</a>
+    <a href="create">{{ string }} {% trans "Добавить пост" %} &#128073;</a>
 </h3>
 <!--Запрос на метод сортировки-->
 
 
-<h2>На сегодняшнее число, {{ time_now|date:'d M Y' }}, всего новостей: {{ posts_quantity }}, на этой странице показано статей: {{posts|length}}.
-     </h2>
+<h2>
+    {{ string }} {% trans "На сегодняшнее число," %}  {{ time_now|date:'d M Y' }}, 
+    {{ string }} {% trans "  всего новостей: " %} {{ posts_quantity }}, {{ string }} 
+    {% trans " на этой странице показано статей: " %}  {{posts|length}}.
+</h2>
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
 <hr>
@@ -30,14 +34,14 @@
 <table>
     <thead>
     <tr align="left">
-        <th> Автор:</th>
-        <th> Заголовок:</th>
-        <th> Краткое содержание:</th>
-        <th> Дата публикации:</th>
-        <th> Категория:</th>
-        <th> Рэйтинг:</th>
-        <th> Ред-ть:</th>
-        <th> Удалить:</th>
+        <th> {{ string }} {% trans "Автор:" %} </th>
+        <th> {{ string }} {% trans "Заголовок:" %} </th>
+        <th> {{ string }} {% trans "Краткое содержание:" %} </th>
+        <th> {{ string }} {% trans "Дата публикации:" %} </th>
+        <th> {{ string }} {% trans "Категория:" %} </th>
+        <th> {{ string }} {% trans "Рэйтинг:" %} </th>
+        <th> {{ string }} {% trans "Ред-ть:" %} </th>
+        <th> {{ string }} {% trans "Удалить:" %} </th>
 
     </tr>
     </thead>
@@ -58,11 +62,11 @@
         <td align="center"><a href="{% url 'delete' item.id %}"><u> &#128683; </u></a></td>
     </tr>
     {% endfor %}
-<h4>Вы можете подписаться на любую категорию, кликнув по ней</h4>
+<h4>{{ string }} {% trans "Вы можете подписаться на любую категорию, кликнув по ней" %} </h4>
 
 </table>
 {% else %}
-<h2>Сегодня без новостей &#129335;</h2>
+<h2>{{ string }} {% trans "Сегодня без новостей" %}  &#129335;</h2>
 {% endif %}
 <br>
 {% if is_paginated %}

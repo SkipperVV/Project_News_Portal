@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+{% load i18n %} 
 {% load static %}
 {% load cache %}
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <title>
+    Posts
+    </title>
 </head>
 <body>
 
@@ -14,21 +17,35 @@
     <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
 </p>
 <!-- Закэшируем картинку для примера и поставим счетчик для наглядности-->
-<p align="center">the picture above is cashed for </p>
+<p align="center">the picture above is cashed for sec:</p>
 <script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
-<p align="center">sec</p>
-
-</body>
+<p align="center"></p>
 {% endcache %}
-<b style="color:#ff0099; font-size:30px"> Новостной портал</b>
-<br>
-<h2>Нашего дорогого клиента: "{{user}}"</h2>
+</body>
 
+<form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
+    <input type="hidden" name="next" value="{{ redirect_to }}">
+    
+    <select name="language" id="">
+        {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
+        {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
+
+        {% for language in languages %} <!-- Итерируясь по списку, выводим их название на языке пользователя и код -->
+            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                {{ language.name_local }} - {{ language.code }}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="set">
+    
+</form>
+<b style="color:#ff0099; font-size:30px"> {{ string }} {% trans "Новостной портал" %} </b>
+<br>
+<h2>{{ string }} {% trans "Нашего дорогого клиента:" %}  {{user}}</h2>
 <style> .aligncenter {text-align: center;} </style>
 
-
 {% block content %}
-<h1>Все новости</h1>
+<!-- <h1>{{ string }} {% trans "Все новости:" %}  {{user}}</h1> -->
 {{ posts }}
 {% endblock content %}
 

@@ -1,10 +1,26 @@
+{% load i18n %}
+<form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} 
+    <input type="hidden" name="next" value="{{ redirect_to }}">
+    
+    <select name="language" id="">
+        {% get_available_languages as LANGUAGES %} 
+        {% get_language_info_list for LANGUAGES as languages %} 
+
+        {% for language in languages %} 
+            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                {{ language.name_local }} - {{ language.code }}
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="set">
+
 <html>
     <head>
-        <title> Вход или регистрация</title>
+        <title> {{ string }} {% trans "Вход или регистрация" %}</title>
     </head>
     <body>
         <div>
-            <h1><a href="/">Вход или регистрация</a></h1>
+            <h1><a href="/">{{ string }} {% trans "Вход или регистрация" %}</a></h1>
         </div>
         {% block content %}
         {% endblock %}

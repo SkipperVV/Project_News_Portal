@@ -4,6 +4,7 @@ from django.urls import path,include
 
 urlpatterns = [
     # path('pages/', include('django.contrib.flatpages.urls')),
+    path('i18n/', include('django.conf.urls.i18n')), # подключаем перевод
     path('admin/', admin.site.urls),
     path('news/', include('Models.urls')),
     # path('create/', include('Models.urls')),

@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %}
 <b style="color:#ff0099; font-size:30px"> Page "Posts"</b>
 <!--{% load censor_filter %}-->
 
@@ -7,16 +8,16 @@
 {% block content %}
 
 <h3>
-    <a href="/news/search/">Найти публикацию &#128073; </a>
+    <a href="/news/search/">{{ string }} {% trans "Найти публикацию" %} &#128073; </a>
     {% if posts|length > 1 %}
     <br>
-    <a href="/news/one_by_one/"> Постраничный вывод статей &#128073;</a>
+    <a href="/news/one_by_one/"> {{ string }} {% trans "Постраничный вывод статей" %} &#128073;</a>
     {% else %}
     <br>
-    <a href="/news">На главную &#128073;</a>
+    <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a>
     {% endif %}
     <br>
-    <a href="/news/create">Добавить пост &#128073;</a>
+    <a href="/news/create">{{ string }} {% trans "Добавить пост" %} &#128073;</a>
 </h3>
 <!--Запрос на метод сортировки-->
 
@@ -30,14 +31,14 @@
 <table>
     <thead>
     <tr align="left">
-        <th> Автор:</th>
-        <th> Заголовок:</th>
-        <th> Краткое содержание:</th>
-        <th> Дата публикации:</th>
-        <th> Категория:</th>
-        <th> Рэйтинг:</th>
-        <th> Ред-ть:</th>
-        <th> Удалить:</th>
+        <th> {{ string }} {% trans "Автор:" %}</th>
+        <th> {{ string }} {% trans "Заголовок:" %}</th>
+        <th> {{ string }} {% trans "Краткое содержание:" %}</th>
+        <th> {{ string }} {% trans "Дата публикации:" %}</th>
+        <th> {{ string }} {% trans "Категория:" %}</th>
+        <th> {{ string }} {% trans "Рэйтинг:" %}</th>
+        <th> {{ string }} {% trans "Ред-ть:" %}</th>
+        <th> {{ string }} {% trans "Удалить:" %}</th>
 
     </tr>
     </thead>
@@ -61,25 +62,24 @@
 </table>
 <p class="text-center">
         {% if not is_subscriber %}            
-            <button><a href="{% url 'subscribe' category.id %}">Подписаться на категорию "{{category}}"</a> </button>     
+            <button><a href="{% url 'subscribe' category.id %}">{{ string }} {% trans "Подписаться на категорию :" %}"{{category}}"</a> </button>     
         {% else %}
             <h3>Вы уже подписаны на категорию "{{category}}"
-                 <button><a href="{% url 'unsubscribe' category.id %}">Отписаться</a> </button></h3> 
-            <h3>Статьи выбранной категории: </h3> 
+                 <button><a href="{% url 'unsubscribe' category.id %}">{{ string }} {% trans "Отписаться" %}</a> </button></h3> 
+            <h3>{{ string }} {% trans "Статьи выбранной категории:" %} </h3> 
             
             {% for item in categories_posts_list %}
             Автор- 
             {{item.author}}, 
-            Заголовок:
+            {{ string }} {% trans "Заголовок:" %}
             "{{item.title}}" 
             <br>
-            {% endfor %}        
-                      
+            {% endfor %}                            
         {% endif %}
 </p>
 
 {% else %}
-<h2>Сегодня без новостей :(</h2>
+<h2>{{ string }} {% trans "Сегодня без новостей" %}(</h2>
 {% endif %}
 <br>
 {% if is_paginated %}

@@ -1,13 +1,14 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %} 
 {% load censor_filter %}
 {% load filter %}
 {% block title %} Posts {% endblock title %}
 
 {% block content %}
 
-<h3>Поиск публикаций. Выберите пост из списка внизу или введите критерии поиска.
+<h3>{{ string }} {% trans "Поиск публикаций. Выберите пост из списка внизу или введите критерии поиска." %}
 <br><br>
-    <a href="/news">На главную &#128073;</a>
+<a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a>
 </h3>
 <br>
 
@@ -21,12 +22,12 @@
 {% if filter.qs %}
 <table>
     <tr align="left">
-        <th> Автор:</th>
-        <th> Заголовок:</th>
-        <th> Краткое содержание:</th>
+        <th> {{ string }} {% trans "Автор:" %}</th>
+        <th> {{ string }} {% trans "Заголовок:" %}</th>
+        <th> {{ string }} {% trans "Краткое содержание:" %}</th>
         <!-- <th> category:</th> -->
-        <th> Дата публикации:</th>
-        <th> Рэйтинг:</th>
+        <th> {{ string }} {% trans "Дата публикации:" %}</th>
+        <th> {{ string }} {% trans "Рэйтинг:" %}</th>
 
         {% for item in filter.qs %}
 
@@ -47,7 +48,7 @@
 
     {% else %}
 
-    <h2 style="text-align:center"> По этим кретериям поиска ничего не найдено &#128580;</h2>
+    <h2 style="text-align:center"> {{ string }} {% trans "По этим критериям поиска ничего не найдено" %} &#128580;</h2>
 
     {% endif %}
 </table>

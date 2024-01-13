@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load i18n %} 
 <b style="color:#ff0099; font-size:30px"> Page "Post"</b>
 {% load censor_filter %}
 
@@ -7,22 +8,24 @@ Post
 {% endblock title %}
 
 {% block content %}
-Проверяющему: Баннеры не убрал в default.html, т.к. их текст меняется в зависимости от назначения страницы
+<!-- Проверяющему: Все баннеры не собрал до кучи в default.html, т.к. их текст меняется в зависимости от назначения страницы -->
 <h3>
     <br>
-    <a href="/news">На главную &#128073;</a>
+    <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a>
     <br>
-    <a href="/news/search/">Найти публикацию &#128073;</a>
+    <a href="news/search/">{{ string }} {% trans "Найти публикацию" %} &#128073; </a>
     <br>
-    <a href="/news/create">Добавить еще пост &#128073;</a>
+    <a href="news/create">{{ string }} {% trans "Добавить пост" %} &#128073;</a>
 </h3>
-<h1>Опубликовано</h1>
-<h1> Автор: "{{post.author}}", дата и время поста: {{post.post_time}},<br><br>Заголовок: "{{ post.title|censor }}"</h1>
 
-<h3>Содержание: {{ post.text|censor }}</h3>
+<h1>{{ string }} {% trans "Опубликовано" %}</h1>
+<h1> {{ string }} {% trans "Автор:" %} "{{post.author}}", {{ string }} {% trans "дата и время поста:" %} {{post.post_time}},<br>
+    <br>{{ string }} {% trans "Заголовок:" %} "{{ post.title|censor }}"</h1>
+
+<h3>{{ string }} {% trans "Содержание: " %} {{ post.text|censor }}</h3>
 <hr>
 <br>
-        <h3 align="center"> <a href="{% url 'update' post.id %}"><u> Редактировать &#128260;</u></a></h3>
-        <h3 align="center"><a href="{% url 'delete' post.id %}"><u> Удалить &#128683; </u></a></h3>
+        <h3 align="center"> <a href="{% url 'update' post.id %}"><u> {{ string }} {% trans "Редактировать" %} &#128260;</u></a></h3>
+        <h3 align="center"><a href="{% url 'delete' post.id %}"><u> {{ string }} {% trans "Удалить" %} &#128683; </u></a></h3>
 
 {% endblock content %}
