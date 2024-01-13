@@ -16,7 +16,5 @@ urlpatterns = [
 
     path('upgrade/', upgrade_me, name = 'upgrade'),
 
-    path('addcommon/', add_common, name = 'add_common'),
-
-
+    path('addcommon/', add_common, name = 'add_common')
 ]

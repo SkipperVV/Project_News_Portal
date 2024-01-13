@@ -22,8 +22,9 @@
 <!--Запрос на метод сортировки-->
 
 
-<h2>На сегодняшнее число, {{ time_now|date:'d M Y' }}, всего новостей: {{ posts_quantity }}, на этой странице: {{posts|length}}.
-     </h2>
+<h2>
+    {{ string }} {% trans "Все статьи выбранной категории:" %}
+</h2>
 
 <!--<h2>{{ time_now|date:'M d Y' }}</h2>-->
 <hr>
@@ -64,12 +65,12 @@
         {% if not is_subscriber %}            
             <button><a href="{% url 'subscribe' category.id %}">{{ string }} {% trans "Подписаться на категорию :" %}"{{category}}"</a> </button>     
         {% else %}
-            <h3>Вы уже подписаны на категорию "{{category}}"
+            <h3>{{ string }} {% trans "Вы уже подписаны на категорию" %} "{{category}}"
                  <button><a href="{% url 'unsubscribe' category.id %}">{{ string }} {% trans "Отписаться" %}</a> </button></h3> 
-            <h3>{{ string }} {% trans "Статьи выбранной категории:" %} </h3> 
+            <h3>{{ string }} {% trans "Статьи категории, на которую вы подписаны:" %} </h3> 
             
             {% for item in categories_posts_list %}
-            Автор- 
+
             {{item.author}}, 
             {{ string }} {% trans "Заголовок:" %}
             "{{item.title}}" 

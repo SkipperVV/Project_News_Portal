@@ -10,8 +10,8 @@
     {% csrf_token %}
 
     {{ form.as_p }}
-    <input type="submit" value="Добавить/изменить пост">
+    <input type="submit" value="Add/edit post">
 </form>
 <br>
-<h3>    <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a> </h3>
+<h3> <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a> </h3>
 {% endblock content %}

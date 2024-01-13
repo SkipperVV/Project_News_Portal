@@ -1,3 +1,4 @@
+from django.utils.translation import gettext as _
 from typing import Any
 from django.shortcuts import get_object_or_404, render, reverse, redirect
 from django.views import View
@@ -7,7 +8,6 @@ from datetime import datetime
 from .models import Category, Post
 from .views import PostsListAll
 from django.contrib.auth.decorators import login_required
-
 
 class Categories_list_View(PostsListAll):
     model = Post
@@ -31,7 +31,7 @@ def subscribe(request, pk):
     category=Category.objects.get(id=pk)
     category.subscribers.add(user)
 
-    message = f'Вы успешно подписались на рассылку по категории '
+    message = _('Вы успешно подписались на рассылку по категории ')
     return render(request, 'suscribe.html',{'category' : category, 'message' : message})
 
 @login_required
@@ -40,6 +40,6 @@ def unsubscribe(request, pk):
     category=Category.objects.get(id=pk)
     category.subscribers.remove(user)
 
-    message = f'Вы успешно отписались от рассылки по категории '
+    message = _('Вы успешно отписались от рассылки по категории ')
     return render(request, 'suscribe.html',{'category' : category, 'message' : message})
 

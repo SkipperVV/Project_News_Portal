@@ -1,7 +1,7 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %} 
 {% block content %}
 <h1 class="text-center">{{ message }}  "{{ category }}"</h1>
 <br>
-    <a href="/news">На главную &#128073;</a>
+<h3> <a href="/news">{{ string }} {% trans "На главную" %} &#128073;</a> </h3>
 {% endblock content %}

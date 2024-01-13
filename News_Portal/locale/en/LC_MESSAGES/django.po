@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-13 19:02+0100\n"
+"POT-Creation-Date: 2024-01-13 21:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,79 +30,96 @@ msgstr "Enter the name of the new category"
 msgid "Введите название"
 msgstr "Enter the name"
 
+#: .\Models\view_categories.py:34
+msgid "Вы успешно подписались на рассылку по категории "
+msgstr "You have successfully subscribed to the category "
+
+#: .\Models\view_categories.py:43
+msgid "Вы успешно отписались от рассылки по категории "
+msgstr "You have successfully unsubscribed from the category "
+
 #: .\templates\categories_list.html:11 .\templates\post.html:16
-#: .\templates\posts.html:11 .\templates\protect\index.html:45
+#: .\templates\posts.html:12 .\templates\protect\index.html:45
 msgid "Найти публикацию"
 msgstr "Find publication"
 
-#: .\templates\categories_list.html:14 .\templates\posts.html:14
+#: .\templates\categories_list.html:14 .\templates\posts.html:15
 #: .\templates\protect\index.html:48
 msgid "Постраничный вывод статей"
 msgstr "One by one output of articles"
 
 #: .\templates\categories_list.html:17 .\templates\create.html:16
-#: .\templates\post.html:14 .\templates\posts.html:17
+#: .\templates\delete.html:8 .\templates\post.html:14 .\templates\posts.html:18
 #: .\templates\protect\index.html:51 .\templates\search.html:11
+#: .\templates\suscribe.html:6
 msgid "На главную"
 msgstr "Main page"
 
 #: .\templates\categories_list.html:20 .\templates\post.html:18
-#: .\templates\posts.html:20 .\templates\protect\index.html:54
+#: .\templates\posts.html:21 .\templates\protect\index.html:54
 msgid "Добавить пост"
 msgstr "Add a post"
 
-#: .\templates\categories_list.html:34 .\templates\delete.html:14
-#: .\templates\post.html:22 .\templates\posts.html:37
+#: .\templates\categories_list.html:26
+msgid "Все статьи выбранной категории:"
+msgstr "All articles in the selected category:"
+
+#: .\templates\categories_list.html:35 .\templates\delete.html:14
+#: .\templates\post.html:22 .\templates\posts.html:38
 #: .\templates\search.html:25
 msgid "Автор:"
 msgstr "Author"
 
-#: .\templates\categories_list.html:35 .\templates\categories_list.html:74
+#: .\templates\categories_list.html:36 .\templates\categories_list.html:75
 #: .\templates\delete.html:15 .\templates\post.html:23
-#: .\templates\posts.html:38 .\templates\search.html:26
+#: .\templates\posts.html:39 .\templates\search.html:26
 msgid "Заголовок:"
 msgstr "Heading:"
 
-#: .\templates\categories_list.html:36 .\templates\delete.html:16
-#: .\templates\posts.html:39 .\templates\search.html:27
+#: .\templates\categories_list.html:37 .\templates\delete.html:16
+#: .\templates\posts.html:40 .\templates\search.html:27
 msgid "Краткое содержание:"
 msgstr "Content:"
 
-#: .\templates\categories_list.html:37 .\templates\delete.html:17
-#: .\templates\posts.html:40 .\templates\search.html:29
+#: .\templates\categories_list.html:38 .\templates\delete.html:17
+#: .\templates\posts.html:41 .\templates\search.html:29
 msgid "Дата публикации:"
 msgstr "Publication date:"
 
-#: .\templates\categories_list.html:38 .\templates\posts.html:41
+#: .\templates\categories_list.html:39 .\templates\posts.html:42
 msgid "Категория:"
 msgstr "Category:"
 
-#: .\templates\categories_list.html:39 .\templates\delete.html:18
-#: .\templates\posts.html:42 .\templates\search.html:30
+#: .\templates\categories_list.html:40 .\templates\delete.html:18
+#: .\templates\posts.html:43 .\templates\search.html:30
 msgid "Рэйтинг:"
 msgstr "Rating:"
 
-#: .\templates\categories_list.html:40 .\templates\posts.html:43
+#: .\templates\categories_list.html:41 .\templates\posts.html:44
 msgid "Ред-ть:"
 msgstr "Edit:"
 
-#: .\templates\categories_list.html:41 .\templates\posts.html:44
+#: .\templates\categories_list.html:42 .\templates\posts.html:45
 msgid "Удалить:"
 msgstr "Delate:"
 
-#: .\templates\categories_list.html:65
+#: .\templates\categories_list.html:66
 msgid "Подписаться на категорию :"
 msgstr "Subscribe to category:"
 
 #: .\templates\categories_list.html:68
+msgid "Вы уже подписаны на категорию"
+msgstr "You are already subscribed to the category:"
+
+#: .\templates\categories_list.html:69
 msgid "Отписаться"
 msgstr "Unsubscribe"
 
-#: .\templates\categories_list.html:69
-msgid "Статьи выбранной категории:"
-msgstr "Enter the name of the new category"
+#: .\templates\categories_list.html:70
+msgid "Статьи категории, на которую вы подписаны:"
+msgstr "Articles from the category you are subscribed to:"
 
-#: .\templates\categories_list.html:82 .\templates\posts.html:69
+#: .\templates\categories_list.html:83 .\templates\posts.html:70
 msgid "Сегодня без новостей"
 msgstr "No news today"
 
@@ -154,19 +171,19 @@ msgstr "Delate"
 msgid "Главная страница"
 msgstr "Main page"
 
-#: .\templates\posts.html:26
+#: .\templates\posts.html:27
 msgid "На сегодняшнее число,"
 msgstr "As of today's date,"
 
-#: .\templates\posts.html:27
+#: .\templates\posts.html:28
 msgid "  всего новостей: "
 msgstr "total news:"
 
-#: .\templates\posts.html:28
+#: .\templates\posts.html:29
 msgid " на этой странице показано статей: "
 msgstr "Paged output of articles"
 
-#: .\templates\posts.html:65
+#: .\templates\posts.html:66
 msgid "Вы можете подписаться на любую категорию, кликнув по ней"
 msgstr "You can subscribe to any category by clicking on it"
 
