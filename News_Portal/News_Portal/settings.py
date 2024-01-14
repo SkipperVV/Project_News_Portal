@@ -199,6 +199,7 @@ LOGGING = {
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation', # транслятор обязательно вставить перед админом
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
