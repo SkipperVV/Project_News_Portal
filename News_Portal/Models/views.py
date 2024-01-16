@@ -1,4 +1,7 @@
 import datetime
+from django.utils import timezone
+from django.shortcuts import redirect
+import pytz #  импортируем стандартный модуль для работы с часовыми поясами
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponse
@@ -21,10 +24,14 @@ class PostsListAll(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['time_now'] = datetime.datetime.utcnow()
+        context['time_now'] = datetime.datetime.now()
         context['posts_quantity'] = len(Post.objects.all())
+        context['timezones'] = pytz.common_timezones #  добавляем в контекст все доступные часовые пояса
+        context['current_time'] = timezone.now()
         return context
-
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/news')
 
 class PostView(ListView):
     model = Post

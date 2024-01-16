@@ -231,6 +231,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
     'django.middleware.locale.LocaleMiddleware', # Для пакета gettext 0.21
+    'basic.middlewares.TimezoneMiddleware', # Запрос на локальное время пользователя
     # Cashing of the Full site:
     # 'django.middleware.cache.UpdateCacheMiddleware',
     # 'django.middleware.cache.FetchFromCacheMiddleware',

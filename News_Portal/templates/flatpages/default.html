@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-{% load i18n %} 
+{% load i18n %}
+{% load tz %} <!-- Загружаем тег для работы с часовыми поясами -->
 {% load static %}
 {% load cache %}
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>
     Posts
     </title>
+    <!-- Если сейчас больше чем 19 или же меньше 7, то выводим тёмную тему, иначе выводим светлую -->
+    <style>
+        body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} MediumSlateBlue {% else %} LightSkyBlue {% endif %};}
+    </style>
+
 </head>
 <body>
 
-{% cache 60 picture %}
-<p class="aligncenter">
-    <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
-</p>
-<!-- Закэшируем картинку для примера и поставим счетчик для наглядности-->
-<p align="center">the picture above is cashed for sec:</p>
-<script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
-<p align="center"></p>
-{% endcache %}
+    {% cache 60 picture %}
+        <p class="aligncenter">
+            <img width="5%" src="{% static 'images/news.jpeg' %}" align="center" alt="news">
+        <!-- Закэшируем картинку для примера и поставим счетчик для наглядности-->
+                > > >  this picture is cashed for sec:
+            <script src="//megatimer.ru/get/39471362c69e32692e6b2e21f08ef923.js"></script>
+        </p>
+        <!--<p align="center"></p>-->
+    {% endcache %}
+
 </body>
 
 <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %} <!-- Не забываем по csrf_token для POST запросов -->
     <input type="hidden" name="next" value="{{ redirect_to }}">
-    
+    <label for="Language">language:</label>
     <select name="language" id="">
         {% get_available_languages as LANGUAGES %} <!-- получаем языки -->
         {% get_language_info_list for LANGUAGES as languages %} <!-- Помещаем их в список languages -->
@@ -37,11 +44,27 @@
         {% endfor %}
     </select>
     <input type="submit" value="set">
-    
 </form>
-<b style="color:#ff0099; font-size:30px"> {{ string }} {% trans "Новостной портал" %} </b>
-<br>
-<h2>{{ string }} {% trans "Нашего дорогого клиента:" %}  {{user}}</h2>
+
+{% get_current_timezone as TIME_ZONE %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="timezone">Time zone:</label>
+    <select name="timezone">
+        {% for tz in timezones %}
+        <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Set">
+</form>
+
+<p>User's zone / day, time: {{ TIME_ZONE }} / {{ current_time|timezone:TIME_ZONE }} </p><!-- Отображаем время в выбранном часовом поясе  -->
+<p>Local day, time: {{ time_now }} </p>
+<p>-----------------------------------------------------------------------</p>
+
+<b style="color:#ff0099; font-size:30px"> {{ string }} {% trans "Новостной портал" %} {{ string }} {% trans "Нашего дорогого клиента:" %}  {{user}}</b>
+
+<!--<h2>{{ string }} {% trans "Нашего дорогого клиента:" %}  {{user}}</h2>-->
 <style> .aligncenter {text-align: center;} </style>
 
 {% block content %}

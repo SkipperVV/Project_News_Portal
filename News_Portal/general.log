@@ -1251,3 +1251,546 @@
 2024-01-14 16:16:58,273 - INFO, Module: "basehttp", Message: "GET /news/create/136 HTTP/1.1" 200 3887
 2024-01-14 16:17:01,364 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
 2024-01-14 16:17:01,452 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10009
+2024-01-14 18:27:36,039 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:27:36,161 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9067
+2024-01-14 18:27:39,946 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 2601
+2024-01-14 18:27:53,256 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 12568
+2024-01-14 18:28:09,628 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:28:09,785 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 13476
+2024-01-14 18:28:26,218 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:28:26,376 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 13476
+2024-01-14 18:28:30,313 - INFO, Module: "basehttp", Message: "GET /news/135 HTTP/1.1" 200 2997
+2024-01-14 18:28:35,084 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:28:35,109 - INFO, Module: "basehttp", Message: "GET /news/135 HTTP/1.1" 200 2997
+2024-01-14 18:28:56,199 - INFO, Module: "basehttp", Message: "GET /admin/ HTTP/1.1" 200 17192
+2024-01-14 18:29:00,178 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 26718
+2024-01-14 18:29:00,258 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-14 18:29:05,006 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/135/change/ HTTP/1.1" 200 22580
+2024-01-14 18:29:05,063 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-14 18:30:00,596 - INFO, Module: "basehttp", Message: "POST /admin/Models/post/135/change/ HTTP/1.1" 302 0
+2024-01-14 18:30:00,690 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 26993
+2024-01-14 18:30:00,755 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-14 18:30:04,535 - INFO, Module: "basehttp", Message: "GET /news/135 HTTP/1.1" 200 3169
+2024-01-14 18:30:09,521 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:30:09,552 - INFO, Module: "basehttp", Message: "GET /news/135 HTTP/1.1" 200 2787
+2024-01-14 18:30:18,324 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/135/change/ HTTP/1.1" 200 21918
+2024-01-14 18:30:18,401 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:30:55,959 - INFO, Module: "basehttp", Message: "POST /admin/Models/post/135/change/ HTTP/1.1" 302 0
+2024-01-14 18:30:56,058 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 25655
+2024-01-14 18:30:56,160 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:30:59,599 - INFO, Module: "basehttp", Message: "GET /news/135 HTTP/1.1" 200 2755
+2024-01-14 18:31:04,372 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-14 18:31:04,467 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9046
+2024-01-14 18:31:13,380 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/160/change/ HTTP/1.1" 200 21203
+2024-01-14 18:31:13,460 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:32:19,281 - INFO, Module: "basehttp", Message: "POST /admin/Models/post/160/change/ HTTP/1.1" 302 0
+2024-01-14 18:32:19,369 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 25665
+2024-01-14 18:32:19,442 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:32:23,041 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9038
+2024-01-14 18:32:28,868 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:32:28,964 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10066
+2024-01-14 18:32:37,801 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/160/change/ HTTP/1.1" 200 22315
+2024-01-14 18:32:37,893 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-14 18:32:57,652 - INFO, Module: "basehttp", Message: "POST /admin/Models/post/160/change/ HTTP/1.1" 302 0
+2024-01-14 18:32:57,751 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 27003
+2024-01-14 18:32:57,806 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+2024-01-14 18:33:02,454 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10075
+2024-01-14 18:33:04,481 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 2832
+2024-01-14 18:33:12,086 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:33:12,123 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 2593
+2024-01-14 18:33:18,969 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-14 18:33:19,006 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 3177
+2024-01-14 18:33:24,762 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9038
+2024-01-14 18:33:33,925 - INFO, Module: "basehttp", Message: "GET /news/one_by_one/ HTTP/1.1" 200 3336
+2024-01-14 18:33:43,250 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:33:43,318 - INFO, Module: "basehttp", Message: "GET /news/one_by_one/ HTTP/1.1" 200 3735
+2024-01-14 18:33:54,723 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:33:54,747 - INFO, Module: "basehttp", Message: "GET /news/one_by_one/ HTTP/1.1" 200 3336
+2024-01-14 18:33:57,402 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9038
+2024-01-14 18:34:10,307 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:34:10,395 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10075
+2024-01-14 18:34:23,029 - INFO, Module: "basehttp", Message: "GET /news/categories/4 HTTP/1.1" 200 10628
+2024-01-14 18:34:38,699 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:34:38,790 - INFO, Module: "basehttp", Message: "GET /news/categories/4 HTTP/1.1" 200 9773
+2024-01-14 18:35:05,267 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9038
+2024-01-14 18:35:20,198 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/69/change/ HTTP/1.1" 200 22801
+2024-01-14 18:35:20,294 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:35:58,039 - INFO, Module: "basehttp", Message: "POST /admin/Models/post/69/change/ HTTP/1.1" 302 0
+2024-01-14 18:35:58,128 - INFO, Module: "basehttp", Message: "GET /admin/Models/post/ HTTP/1.1" 200 25645
+2024-01-14 18:35:58,203 - INFO, Module: "basehttp", Message: "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+2024-01-14 18:36:01,514 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9024
+2024-01-14 18:36:09,557 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:36:09,655 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10075
+2024-01-14 18:36:14,438 - INFO, Module: "basehttp", Message: "GET /news/69 HTTP/1.1" 200 3667
+2024-01-14 18:36:21,852 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:36:21,879 - INFO, Module: "basehttp", Message: "GET /news/69 HTTP/1.1" 200 3080
+2024-01-14 18:36:28,638 - INFO, Module: "basehttp", Message: "GET /news/create/69 HTTP/1.1" 200 3752
+2024-01-14 18:36:35,070 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:36:35,100 - INFO, Module: "basehttp", Message: "GET /news/create/69 HTTP/1.1" 200 3752
+2024-01-14 18:36:38,676 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-14 18:36:38,712 - INFO, Module: "basehttp", Message: "GET /news/create/69 HTTP/1.1" 200 4253
+2024-01-14 18:36:41,742 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-14 18:36:41,845 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10075
+2024-01-15 18:36:30,102 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:37:55,382 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:37:58,901 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:38:35,116 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:38:39,584 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:38:44,982 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:38:49,776 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:39:08,591 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:40:55,505 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:40:59,342 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:43:48,247 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:44:22,229 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:44:26,609 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:44:33,552 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:44:38,587 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:44:44,041 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:44:48,305 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:49:42,767 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:49:46,648 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:50:01,332 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:50:05,581 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:51:13,978 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:51:19,238 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:52:10,225 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 18:52:15,647 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 18:55:38,669 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:00:03,945 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 19:00:08,740 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:00:27,655 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 19:00:32,126 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:17:03,657 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 19:17:08,048 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:17:32,463 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 19:17:35,995 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:18:30,279 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:21:15,613 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-15 19:21:22,834 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:23:15,675 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-15 19:23:19,874 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:23:25,585 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1482
+2024-01-15 19:23:32,816 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10811
+2024-01-15 19:24:32,057 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:25:00,636 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:25:03,654 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:25:07,357 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-15 19:25:07,525 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 4007
+2024-01-15 19:25:10,317 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:25:38,622 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:25:47,177 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10810
+2024-01-15 19:26:00,068 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:26:15,828 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:26:39,293 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10815
+2024-01-15 19:27:10,097 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10813
+2024-01-15 19:27:49,618 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10818
+2024-01-15 19:28:15,461 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10810
+2024-01-15 19:28:45,903 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:29:05,371 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10815
+2024-01-15 19:29:41,153 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10815
+2024-01-15 19:30:25,432 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:30:47,489 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:31:08,395 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:31:20,115 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:31:34,145 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:31:59,391 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10816
+2024-01-15 19:32:14,161 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10819
+2024-01-15 19:32:37,206 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10814
+2024-01-15 19:33:04,729 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-15 19:33:08,366 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:36:41,131 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:46:06,688 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:57:54,696 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:58:51,156 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:59:32,950 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-15 19:59:38,043 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-15 19:59:44,400 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-15 19:59:47,923 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 10:51:28,748 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 10:52:53,966 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 10:52:59,362 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 10:53:58,089 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 10:54:04,389 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 10:55:10,721 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 10:55:14,417 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 10:55:21,172 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1482
+2024-01-16 10:55:25,427 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10814
+2024-01-16 10:55:38,932 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14281
+2024-01-16 10:55:40,663 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10814
+2024-01-16 10:55:42,867 - INFO, Module: "basehttp", Message: "GET /news/one_by_one/ HTTP/1.1" 200 4474
+2024-01-16 10:55:48,669 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 10:55:48,784 - INFO, Module: "basehttp", Message: "GET /news/one_by_one/ HTTP/1.1" 200 4075
+2024-01-16 10:55:53,156 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 3332
+2024-01-16 10:55:56,400 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 10:55:56,427 - INFO, Module: "basehttp", Message: "GET /news/160 HTTP/1.1" 200 3571
+2024-01-16 10:56:03,987 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 10814
+2024-01-16 10:56:12,551 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 10:56:12,622 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9763
+2024-01-16 10:59:13,109 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 10:59:16,598 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:00:17,221 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:00:20,700 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:01:46,974 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:01:49,991 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:04:32,394 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:04:35,538 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:05:20,261 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:05:23,292 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:05:28,501 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9763
+2024-01-16 11:13:25,934 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 11:13:29,050 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:13:41,887 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9763
+2024-01-16 11:14:57,506 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 11:15:00,657 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:15:26,011 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\News_Portal\settings.py changed, reloading.
+2024-01-16 11:15:29,062 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:15:37,899 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 9763
+2024-01-16 11:17:15,988 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:17:19,592 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:17:31,734 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:17:35,335 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:17:48,587 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:17:51,895 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:22:54,712 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:22:57,774 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:23:07,498 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42090
+2024-01-16 11:23:49,137 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:23:49,170 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:23:55,677 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:23:55,768 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42101
+2024-01-16 11:24:38,099 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:24:38,131 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:25:25,248 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42099
+2024-01-16 11:26:54,150 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42100
+2024-01-16 11:28:16,915 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42125
+2024-01-16 11:28:32,791 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:28:32,828 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:28:34,987 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42128
+2024-01-16 11:28:46,534 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:28:46,557 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:28:48,109 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42127
+2024-01-16 11:29:30,161 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42146
+2024-01-16 11:29:45,703 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42147
+2024-01-16 11:30:30,458 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42170
+2024-01-16 11:31:02,506 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42173
+2024-01-16 11:33:22,564 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42221
+2024-01-16 11:33:26,821 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42221
+2024-01-16 11:33:31,083 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:33:31,120 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:33:32,399 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-16 11:33:32,527 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 4047
+2024-01-16 11:33:37,633 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42221
+2024-01-16 11:33:58,424 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42269
+2024-01-16 11:34:24,219 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42285
+2024-01-16 11:34:41,044 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42173
+2024-01-16 11:34:54,521 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42212
+2024-01-16 11:35:05,336 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42212
+2024-01-16 11:35:08,195 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42212
+2024-01-16 11:35:18,098 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 4038
+2024-01-16 11:35:21,904 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42212
+2024-01-16 11:35:37,133 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 11:35:37,233 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43268
+2024-01-16 11:37:21,883 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:37:25,578 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:37:29,610 - ERROR, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 500 102593
+2024-01-16 11:37:45,433 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:37:48,964 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:37:51,728 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:37:51,781 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:37:51,913 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43268
+2024-01-16 11:38:04,788 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:38:04,832 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:38:04,920 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43264
+2024-01-16 11:39:45,656 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 11:39:49,754 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 11:39:51,184 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43324
+2024-01-16 11:40:12,915 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43293
+2024-01-16 11:40:26,012 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:40:26,074 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:40:26,177 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43298
+2024-01-16 11:41:27,756 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43376
+2024-01-16 11:41:57,299 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43377
+2024-01-16 11:42:15,565 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43372
+2024-01-16 11:42:32,603 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43368
+2024-01-16 11:42:49,701 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 11:42:49,904 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42307
+2024-01-16 11:42:54,601 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:42:54,641 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:42:54,718 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42307
+2024-01-16 11:43:03,643 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 11:43:03,685 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 11:43:03,779 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42314
+2024-01-16 11:43:20,386 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 11:43:20,510 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 11:43:28,291 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 11:43:28,380 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42314
+2024-01-16 11:44:08,110 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42315
+2024-01-16 11:44:32,421 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42315
+2024-01-16 11:44:36,866 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42315
+2024-01-16 11:45:12,193 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42307
+2024-01-16 11:45:34,359 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42307
+2024-01-16 11:46:34,795 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42301
+2024-01-16 11:46:39,675 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42301
+2024-01-16 11:46:55,573 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42301
+2024-01-16 11:47:02,404 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42301
+2024-01-16 11:47:13,198 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42301
+2024-01-16 11:47:35,866 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:47:58,944 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:48:01,676 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:48:08,606 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 13460
+2024-01-16 11:48:10,058 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:48:13,672 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:48:24,162 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1219
+2024-01-16 11:48:26,298 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42309
+2024-01-16 11:51:28,622 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43371
+2024-01-16 11:51:29,134 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 11:51:51,579 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43371
+2024-01-16 11:52:11,626 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43371
+2024-01-16 11:52:11,672 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 11:52:15,499 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43371
+2024-01-16 11:52:45,072 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43368
+2024-01-16 11:54:02,081 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43374
+2024-01-16 11:54:04,353 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43374
+2024-01-16 11:54:17,047 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43374
+2024-01-16 11:54:17,096 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:15:22,046 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:15:34,941 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:15:34,970 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:15:44,361 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:16:01,323 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:16:03,004 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:16:05,204 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14484
+2024-01-16 12:16:06,199 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:16:06,286 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:16:08,735 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43373
+2024-01-16 12:16:53,361 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 12:16:53,424 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:17:27,734 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 12:17:29,401 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 12:17:36,013 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 12:17:36,043 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:17:37,663 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43375
+2024-01-16 12:18:32,254 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:33,755 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:40,281 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:40,314 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:18:50,767 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:51,764 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:59,161 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:18:59,200 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:19:00,529 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:19:01,341 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:19:03,491 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14551
+2024-01-16 12:19:07,224 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:19:07,316 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:19:09,191 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-16 12:19:09,231 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 4275
+2024-01-16 12:19:12,834 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:19:17,528 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 12:19:17,605 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43440
+2024-01-16 12:19:24,653 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:19:24,689 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:19:24,779 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43437
+2024-01-16 12:19:42,697 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:19:45,513 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43435
+2024-01-16 12:20:24,885 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43435
+2024-01-16 12:20:26,077 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43435
+2024-01-16 12:20:28,200 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14545
+2024-01-16 12:20:29,870 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43435
+2024-01-16 12:20:57,632 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:21:01,075 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43429
+2024-01-16 12:23:57,038 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43403
+2024-01-16 12:25:19,509 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43424
+2024-01-16 12:25:40,579 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43424
+2024-01-16 12:25:43,814 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43424
+2024-01-16 12:25:45,933 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14534
+2024-01-16 12:25:47,914 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43424
+2024-01-16 12:26:01,032 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43424
+2024-01-16 12:26:24,390 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:26:25,152 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:26:49,461 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:26:53,585 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:26:54,657 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:26:56,479 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:03,524 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:04,054 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:27:27,155 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:44,665 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:54,627 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:56,163 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:27:57,340 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:03,901 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:03,934 - INFO, Module: "basehttp", Message: "GET /static/images/news.jpeg HTTP/1.1" 200 7036
+2024-01-16 12:28:05,257 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:07,460 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14540
+2024-01-16 12:28:09,231 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:28:09,310 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:20,879 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:28:23,170 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:25,724 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43430
+2024-01-16 12:28:34,349 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43434
+2024-01-16 12:29:32,860 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43434
+2024-01-16 12:29:44,821 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:15,998 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:17,218 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:19,494 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14546
+2024-01-16 12:30:20,980 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:25,281 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:37,219 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:30:39,713 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43436
+2024-01-16 12:30:42,547 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14546
+2024-01-16 12:30:44,943 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43433
+2024-01-16 12:32:17,292 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 312945
+2024-01-16 12:32:34,987 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43462
+2024-01-16 12:32:51,644 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43462
+2024-01-16 12:32:54,993 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43462
+2024-01-16 12:32:59,886 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 14572
+2024-01-16 12:33:03,821 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43462
+2024-01-16 12:33:09,397 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 12:33:09,540 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42400
+2024-01-16 12:33:27,403 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:33:27,437 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:33:27,517 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42397
+2024-01-16 12:33:51,752 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42400
+2024-01-16 12:34:39,661 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:34:39,703 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:34:39,802 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42399
+2024-01-16 12:36:37,986 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42406
+2024-01-16 12:36:48,716 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42406
+2024-01-16 12:37:54,580 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42409
+2024-01-16 12:38:30,523 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42409
+2024-01-16 12:38:35,969 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42409
+2024-01-16 12:38:59,191 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42428
+2024-01-16 12:39:01,368 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42428
+2024-01-16 12:39:13,362 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:39:35,990 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42440
+2024-01-16 12:39:40,788 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42440
+2024-01-16 12:40:12,577 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42441
+2024-01-16 12:41:41,794 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 264721
+2024-01-16 12:41:53,052 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42441
+2024-01-16 12:42:58,682 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42457
+2024-01-16 12:43:46,195 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42469
+2024-01-16 12:43:58,439 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:43:58,486 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:43:58,566 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42471
+2024-01-16 12:44:04,961 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:44:05,001 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:44:05,091 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42471
+2024-01-16 12:44:12,359 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 12:44:12,404 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 12:44:12,497 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42467
+2024-01-16 12:45:33,025 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 354960
+2024-01-16 12:46:46,347 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 12:46:50,193 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:46:51,956 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42467
+2024-01-16 12:47:23,356 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 12:47:26,923 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:47:28,613 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42467
+2024-01-16 12:48:55,866 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 354888
+2024-01-16 12:50:12,335 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42502
+2024-01-16 12:50:40,803 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 273074
+2024-01-16 12:52:19,599 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42227
+2024-01-16 12:52:42,496 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42503
+2024-01-16 12:53:00,233 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 12:53:01,866 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42503
+2024-01-16 12:54:07,437 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 273077
+2024-01-16 12:54:47,003 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42466
+2024-01-16 12:59:45,795 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42466
+2024-01-16 13:01:57,247 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 244463
+2024-01-16 13:02:45,490 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 244447
+2024-01-16 13:04:31,498 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 249506
+2024-01-16 13:04:48,747 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42485
+2024-01-16 13:05:09,469 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42480
+2024-01-16 13:06:17,395 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 355864
+2024-01-16 13:06:35,576 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42480
+2024-01-16 13:06:54,887 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 272994
+2024-01-16 13:07:27,494 - ERROR, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 500 272994
+2024-01-16 13:07:49,223 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42480
+2024-01-16 13:08:40,104 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42481
+2024-01-16 13:08:42,627 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42481
+2024-01-16 13:11:17,117 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42480
+2024-01-16 13:11:40,592 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42445
+2024-01-16 13:12:05,627 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:12:05,668 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:12:05,771 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42446
+2024-01-16 13:12:36,650 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:12:36,688 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:12:36,784 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42458
+2024-01-16 13:13:28,103 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42435
+2024-01-16 13:15:25,445 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42433
+2024-01-16 13:17:42,338 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42432
+2024-01-16 13:18:11,071 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42431
+2024-01-16 13:18:31,033 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42435
+2024-01-16 13:19:14,067 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42440
+2024-01-16 13:20:06,495 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42437
+2024-01-16 13:20:11,335 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 13586
+2024-01-16 13:20:16,553 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42437
+2024-01-16 13:20:25,211 - INFO, Module: "basehttp", Message: "GET /news/search/ HTTP/1.1" 200 13586
+2024-01-16 13:20:30,422 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42437
+2024-01-16 13:20:41,699 - INFO, Module: "basehttp", Message: "GET /news/create HTTP/1.1" 301 0
+2024-01-16 13:20:41,744 - INFO, Module: "basehttp", Message: "GET /news/create/ HTTP/1.1" 200 4237
+2024-01-16 13:20:50,742 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42437
+2024-01-16 13:21:06,101 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42411
+2024-01-16 13:21:11,133 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:21:11,170 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:21:11,250 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42411
+2024-01-16 13:21:17,252 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 13:21:17,364 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43473
+2024-01-16 13:21:48,607 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 13:21:48,685 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42411
+2024-01-16 13:21:59,461 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:21:59,506 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:21:59,596 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42411
+2024-01-16 13:22:06,509 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:22:06,559 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:22:06,653 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42400
+2024-01-16 13:23:06,801 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42400
+2024-01-16 13:23:12,772 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42400
+2024-01-16 13:24:13,255 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42434
+2024-01-16 13:25:22,921 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42448
+2024-01-16 13:25:54,250 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42446
+2024-01-16 13:26:27,697 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 13:26:30,905 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 13:26:34,396 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42446
+2024-01-16 13:26:36,151 - ERROR, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 500 75477
+2024-01-16 13:26:48,271 - INFO, Module: "autoreload", Message: C:\Project_News_Portal\News_Portal\Models\views.py changed, reloading.
+2024-01-16 13:26:52,386 - INFO, Module: "autoreload", Message: Watching for file changes with StatReloader
+2024-01-16 13:26:53,888 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:26:53,944 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:26:54,079 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42446
+2024-01-16 13:26:56,053 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:26:56,090 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:26:56,173 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42446
+2024-01-16 13:27:02,387 - INFO, Module: "basehttp", Message: "GET /accounts/logout/ HTTP/1.1" 200 443
+2024-01-16 13:27:06,345 - INFO, Module: "basehttp", Message: "POST /accounts/logout/ HTTP/1.1" 302 0
+2024-01-16 13:27:06,354 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 302 0
+2024-01-16 13:27:06,474 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:12,322 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:14,070 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:52,868 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:54,470 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:55,269 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:28:56,093 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:29:09,552 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:29:10,195 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:29:10,693 - INFO, Module: "basehttp", Message: "GET /accounts/login/?next=/ HTTP/1.1" 200 1567
+2024-01-16 13:30:13,285 - INFO, Module: "basehttp", Message: "POST /accounts/login/ HTTP/1.1" 302 0
+2024-01-16 13:30:13,309 - INFO, Module: "basehttp", Message: "GET / HTTP/1.1" 200 1250
+2024-01-16 13:30:27,302 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:30:27,428 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42436
+2024-01-16 13:30:45,047 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:30:45,092 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:30:45,187 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42447
+2024-01-16 13:31:00,150 - INFO, Module: "basehttp", Message: "POST /news/ HTTP/1.1" 302 0
+2024-01-16 13:31:00,200 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:31:00,332 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42453
+2024-01-16 13:31:12,623 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 13:31:12,734 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43541
+2024-01-16 13:31:56,301 - INFO, Module: "basehttp", Message: "GET /news/categories/2 HTTP/1.1" 200 43298
+2024-01-16 13:32:08,920 - INFO, Module: "basehttp", Message: "GET /news HTTP/1.1" 301 0
+2024-01-16 13:32:09,004 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43541
+2024-01-16 13:32:46,853 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 13:32:46,936 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 42453
+2024-01-16 18:09:53,193 - INFO, Module: "basehttp", Message: "POST /i18n/setlang/ HTTP/1.1" 302 0
+2024-01-16 18:09:53,340 - INFO, Module: "basehttp", Message: "GET /news/ HTTP/1.1" 200 43542

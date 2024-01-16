@@ -584,3 +584,36 @@ python manage.py update_translation_fields
 Сделайте перевод для ваших статей и категорий. Если статей на сайте уже слишком много, то сделайте перевод 
 только для первых пяти.
 
+Добавьте локализацию времени на ваш новостной портал.
+Добавьте пользователю возможность выбирать часовой пояс.
+Добавьте отображение тёмной или светлой темы оформления в зависимости от времени пользователя.
+*************************************************
+
+Сперва создадим middleware для обработки часовых поясов.
+basic/middlewares.py
+
+import pytz
+ 
+from django.utils import timezone
+ 
+class TimezoneMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+ 
+    def __call__(self, request):
+        tzname = request.session.get('django_timezone') #  пытаемся забрать часовой пояс из сессии
+        #  если он есть в сессии, то выставляем такой часовой пояс. Если же его нет, значит он не установлен, и часовой пояс надо выставить по умолчанию (на время сервера)
+        if tzname:
+            timezone.activate(pytz.timezone(tzname)) 
+        else:
+            timezone.deactivate()
+        return self.get_response(request)
+
+Не забываем подключить его в настройках. settings.py
+MIDDLEWARE = [
+    .... 
+    'basic.middlewares.TimezoneMiddleware', # add that middleware!
+]        
+
+Теперь поменяем наше представление, чтобы можно было получать все доступные часовые пояса. vews.py
+---------------------------------------------------------------------------------
