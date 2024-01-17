@@ -1,12 +1,12 @@
 openapi: 3.0.2
 info:
-  title: 'Some application'
+  title: 'News Portal'
   version: "0.1"
 paths:
-  /schools/:
+  /:
     get:
-      operationId: listSchools
-      description: 'List of schools'
+      operationId: listPosts
+      description: 'List of Posts'
       parameters: []
       responses:
         '200':
@@ -15,33 +15,33 @@ paths:
             schema:
               type: array
               items:
-                  $ref: '#/components/schemas/School'
+                  $ref: '#/components/schemas/Post'
           description: ''
       tags:
-        - schools
+        - posts
 
     post:
-      operationId: createSchool
-      description: 'Create school'
+      operationId: createPost
+      description: 'Create a Post'
       parameters: []
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/School'
+              $ref: '#/components/schemas/Post'
       responses:
         '201':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/School'
+                $ref: '#/components/schemas/Post'
           description: ''
       tags:
-        - schools
+        - posts
 
 components:
   schemas:
-    School:
+    Post:
       type: object
       properties:
         id:

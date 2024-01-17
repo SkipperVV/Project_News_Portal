@@ -37,9 +37,15 @@
 {% endif %}
 <br>
 </h2>
-<br>
 
-<button> <a href="sign/logout/">{{ string }} {% trans "Выйти" %}</a> </button>
+    {% if user.email == "admin@admin.com" %}<br>
+        <button> <a href="/swagger-ui/"> "Administrator" has the right to edit data  &#x1F6E0;</a> </button>
+    {% endif %}<br><br>
+
+
+<button> <a href="sign/logout/">{{ string }} {% trans "Выйти" %} &#x25B6;</a> </button>
+
+
 
 <h3>
     <a href="news/search/">{{ string }} {% trans "Найти публикацию" %} &#128073; </a>
