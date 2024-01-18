@@ -15,6 +15,7 @@ POSITION = [(article, 'Статья'), (news, 'Новость'), ]
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, help_text=_("Выбор автора"))
     rating = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
 
     def update_rating(self):
         posts_rating = self.post_set.aggregate(posts_rat=Coalesce(Sum('rating'), 0)).get(

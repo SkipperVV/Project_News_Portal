@@ -13,6 +13,13 @@ from .models import Post
 from .templatetags.filter import PostFilter
 from .tasks import info_after_new_post
 
+from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework import permissions
+
+from Models.serializers import *
+from Models.models import *
+
 from django.utils.translation import gettext as _ # импортируем функцию для перевода
  
 class PostsListAll(ListView):
@@ -94,3 +101,20 @@ class PostDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
+
+# добавим сериализаторы
+class PostViewset(viewsets.ModelViewSet):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
+   def list(self, request, format=None):
+       return Response([])
+
+
+class CommentViewset(viewsets.ModelViewSet):
+   queryset = Comment.objects.all()
+   serializer_class = CommentSerializer
+
+
+class AuthorViewest(viewsets.ModelViewSet):
+   queryset = Author.objects.all()
+   serializer_class = AuthorSerializer

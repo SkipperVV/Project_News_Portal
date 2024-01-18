@@ -577,8 +577,6 @@ python manage.py migrate
 Поскольку у нас уже были записи в базе данных, надо будет ввести команду
 python manage.py update_translation_fields
 
-
-
 ************Проект News Portal*************************************
 Дополните ваше новостное приложение.
 Сделайте перевод для ваших статей и категорий. Если статей на сайте уже слишком много, то сделайте перевод 
@@ -617,3 +615,49 @@ MIDDLEWARE = [
 
 Теперь поменяем наше представление, чтобы можно было получать все доступные часовые пояса. vews.py
 ---------------------------------------------------------------------------------
+************Проект News Portal*************************************
+Доработайте ваше приложение так, чтобы оно реализовало все принципы REST API:
+
+Для новостей сделать возможность получить их по пути /news.
+Аналогично статьи находятся по пути /articles.
+Авторизованные пользователи имеют возможность отослать все виды запросов (POST, PUT, DELETE).
+Неавторизированные — только читать (GET, HEAD, OPTIONS).
+*********************************************************************
+И хотя Django включает в себя много различных компонентов  (или как их ещё называют «батареек»), но для максимально комфортной работы
+с REST необходимо установить DRF.
+
+Для этого нужно выполнить команды:
+pip install djangorestframework
+pip install markdown
+pip install django-filter
+
+нужно добавить Django REST Framework в список установленных приложений
+В settings.py находим список INSTALLED_APPS и добавляем в него 'rest_framework'.
+INSTALLED_APPS = [
+    ....
+   'rest_framework',
+]
+Следующий этап — добавить сериализаторы. Для этого в папке приложения (Models) создаём файл serializers.py и добавляем в него
+следующее содержание:
+from .models import *
+from rest_framework import serializers
+class PostSerializer(serializers.HyperlinkedModelSerializer):
+   class Meta:
+       model = Post
+       fields = ['id', 'user', 'title', 'text', ]
+    .....
+Теперь, когда мы добавили сериализаторы, их нужно как-то использовать
+Для этого нужно в файле views.py проекта добавить классы вьюсетов:
+class PostViewset(viewsets.ModelViewSet):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
+    ......
+
+Раз у нас есть несколько view, которые мы хотим показать, то мы должны зарегистрировать их в urls.py для доступа.
+News_Portal/Models/urls.py
+urlpatterns = [
+    ...
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    ...
+    ]
+!!!    НЕ работает пока что

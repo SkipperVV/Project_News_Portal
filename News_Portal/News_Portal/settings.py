@@ -213,12 +213,11 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    # ... include the providers you want to enable:
-    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.google",   # ... include the providers you want to enable:
     "sign",
     "protect",
-    # отправлять периодические письма
-    "django_apscheduler",
+    "django_apscheduler",     # отправлять периодические письма
+    'rest_framework', # нужно добавить Django REST Framework в список установленных приложений
 ]
 
 MIDDLEWARE = [
