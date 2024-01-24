@@ -38,8 +38,12 @@
 <br>
 </h2>
 
-    {% if user.email == "admin@admin.com" %}<br>
-        <button> <a href="/swagger-ui/"> "Administrator" has the right to edit data  &#x1F6E0;</a> </button>
+    {% if user.email == "admin@admin.com" or "Skippervasin@gmail.com" %}<br>
+    <p3>"Administrator" has the right to edit data with</p3>
+    <br>
+        <button> <a href="/swagger-ui/"> swagger >>>  &#x1F6E0;</a> </button>
+    <p3>  or  </p3>
+        <button> <a href="/serializers/"> serializers >>>  &#x1F6E0;</a> </button>
     {% endif %}<br><br>
 
 

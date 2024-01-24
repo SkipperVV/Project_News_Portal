@@ -2,7 +2,7 @@ from django.urls import path, include
 # cashe
 from django.views.decorators.cache import cache_page
 
-from .views import PostView, PostsListAll, PostCreateView, PostDeleteView, PostUpdateView
+from .views import *
 from .views_old import PostsList, PostDetail
 from .view_categories import Categories_list_View, subscribe, unsubscribe
 

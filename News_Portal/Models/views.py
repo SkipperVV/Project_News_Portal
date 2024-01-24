@@ -106,8 +106,8 @@ class PostDeleteView(PermissionRequiredMixin, DeleteView):
 class PostViewset(viewsets.ModelViewSet):
    queryset = Post.objects.all()
    serializer_class = PostSerializer
-   def list(self, request, format=None):
-       return Response([])
+   # def list(self, request, format=None):
+   #     return Response([])
 
 
 class CommentViewset(viewsets.ModelViewSet):

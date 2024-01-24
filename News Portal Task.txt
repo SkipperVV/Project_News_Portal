@@ -644,7 +644,7 @@ from rest_framework import serializers
 class PostSerializer(serializers.HyperlinkedModelSerializer):
    class Meta:
        model = Post
-       fields = ['id', 'user', 'title', 'text', ]
+       fields = ['url', 'id', 'author', 'title', 'text', ]
     .....
 Теперь, когда мы добавили сериализаторы, их нужно как-то использовать
 Для этого нужно в файле views.py проекта добавить классы вьюсетов:
@@ -661,3 +661,16 @@ urlpatterns = [
     ...
     ]
 !!!    НЕ работает пока что
+
+Если мы изменим в settings.py переменную REST_FRAMEWORK, то сможем задать единый стандарт для прав доступа для всех viewset.
+
+REST_FRAMEWORK = {
+   'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+   'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+   'PAGE_SIZE': 10,
+   'DEFAULT_PERMISSION_CLASSES': [
+       'rest_framework.permissions.IsAuthenticated',
+   ]
+
+}
+Теперь все наши запросы по умолчанию будут доступны только авторизованным пользователям.

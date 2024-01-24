@@ -1,20 +1,20 @@
-from .models import *
+from .models import Post, Comment, Author
 from rest_framework import serializers
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
    class Meta:
        model = Post
-       fields = ['id', 'user', 'title', 'text', ]
+       fields = ['url', 'id', 'author', 'title', 'text', ]
 
 
-class CommentSerializer(serializers.HyperlinkedModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
    class Meta:
        model = Comment
-       fields = ['id', 'text', ]
+       fields = ['url', 'id', 'post', 'text', ]
 
 
-class AuthorSerializer(serializers.HyperlinkedModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
    class Meta:
        model = Author
-       fields = ['id', 'user', 'rating',]
+       fields = ['url', 'id', 'user', 'is_active', 'rating',]

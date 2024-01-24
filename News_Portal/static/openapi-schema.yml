@@ -3,7 +3,7 @@ info:
   title: 'News Portal'
   version: "0.1"
 paths:
-  /:
+  /serializers/posts/:
     get:
       operationId: listPosts
       description: 'List of Posts'
@@ -47,8 +47,20 @@ components:
         id:
           type: integer
           readOnly: true
-        name:
+        author:
+          type: string
+          maxLength: 64
+        title:
+          type: string
+          maxLength: 300
+        text:
+          type: string
+          maxLength:
+        category:
           type: string
           maxLength: 64
       required:
-        - name
+        - author
+        - title
+        - text
+        - category
